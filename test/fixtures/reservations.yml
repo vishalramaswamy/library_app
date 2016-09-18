@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bookingdate: 2016-09-18
+  starttime: 2016-09-18 01:09:16
+  endtime: 2016-09-18 01:09:16
+  user_id: 
+  room_id: 
+
+two:
+  bookingdate: 2016-09-18
+  starttime: 2016-09-18 01:09:16
+  endtime: 2016-09-18 01:09:16
+  user_id: 
+  room_id: 
