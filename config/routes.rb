@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users #, :rooms do
  #   resources :reservations
   #end
-  root 'users#index'
+  root 'access#login'
   get 'user', :to =>"access#index"
   match ':controller(/:action(/:id))',:via => [:get,:post]
   # The priority is based upon order of creation: first created -> highest priority.
