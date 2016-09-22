@@ -3,9 +3,30 @@ class AccessController < ApplicationController
   end
 
   def login
-    @user = User.new    
+#    @user1 = User.new    
 
   end
+  def userprofile
+    @user1 = User.find($globaluserid)
+
+  end
+def update
+    @user1 = User.find($globaluserid)
+    if @user1.update(params[:user].permit(:password,:email))
+      link_to :controller => 'Access', :action => 'roomuser'
+    else
+      render :controller => 'Access', :action => 'edit'
+          end
+end
+
+  def roomuser
+ #   @user1 = User.find($globaluserid)
+
+  end
+  def edit
+    @user1 = User.find($globaluserid)
+  end
+
 
   def attempt_login
 authorized_user=false
@@ -14,6 +35,8 @@ admin_user=false
       found_user= User.where(:username => params[:username]).first
       if found_user
         authorized_user = found_user.authenticate(params[:password])
+        $globaluserid=User.select("id").where(:username => params[:username]).first.id
+$globalusername=User.select("username").where(:username => params[:username]).first.username
       if authorized_user
         if params[:isAdmin]
           admin_user = User.select("isAdmin").where(:username => params[:username]).first
@@ -23,7 +46,7 @@ admin_user=false
             redirect_to(:action => 'login')
           end
         else
-          redirect_to(:action => 'index')
+          redirect_to(:action => 'roomuser')
         end
       else
         redirect_to(:action => 'login')
