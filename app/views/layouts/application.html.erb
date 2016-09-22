@@ -14,17 +14,18 @@
 <!--<%= image_tag "logo.jpg" %>-->
 <% end %>
 </div>
-<ul>
-	<li class="category"><%= link_to "Home", root_path%></li>
+<!--<ul>
+#	<li class="category"><%= link_to "Home", root_path%></li>
 	<li class="category">About</li>
 </ul>
-
+-->
 </div>
 <div id="main_content">
 	<div id="header">
-		<p>User Login</p>
+		<p>Library System</p>
 		<div class="buttons">
-			<button class="button"><%= link_to "Sign Up", root_path %></button>
+			<button class="button"><%= link_to "Sign Up", :controller => 'Users', :action => 'new' %></button>
+			<button class="button"><%= link_to "Login", :controller => 'Access', :action => 'login' %></button>
 		</div>
 	</div>
 
