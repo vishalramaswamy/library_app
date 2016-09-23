@@ -41,7 +41,11 @@ def admincreate
 def updateprofile
     @access = User.find($globaluserid)
     if @access.update(params[:user].permit(:password,:email))
-     redirect_to :controller => 'Access', :action => 'roomuser'
+     if $globaladminuser.isAdmin != nil
+     redirect_to :controller => 'Access', :action => 'roomadmin'
+   else
+     redirect_to :controller => 'Access', :action => 'roomadmin'
+   end
 #        redirect_to @access
     else
       render 'edit'
@@ -66,6 +70,7 @@ $globalusername=User.select("username").where(:username => params[:username]).fi
       if authorized_user
         if params[:isAdmin]
           admin_user = User.select("isAdmin").where(:username => params[:username]).first
+          $globaladminuser=User.select("isAdmin").where(:username => params[:username]).first
           if admin_user.isAdmin != nil
             redirect_to(:action => 'roomadmin')
           else
