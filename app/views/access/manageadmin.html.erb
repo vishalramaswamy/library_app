@@ -1,0 +1,9 @@
+<% @access.each do |access| %>
+<h1>
+
+<%= access.username %>
+<%= access.email %>|
+<%= link_to 'Delete' ,:controller =>'Access' , :action => 'destroy' , id: access.id, method: :delete,data: {confirm: 'Are you sure?'} %>
+</h1>
+
+<% end %>

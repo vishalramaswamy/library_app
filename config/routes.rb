@@ -1,11 +1,25 @@
 Rails.application.routes.draw do
+  get 'rooms/index'
+
+  get 'rooms/index'
+
   get 'access/index'
 
   get 'access/login'
-
+post "rooms/new"
   resources :users #, :rooms do
+  resources :rooms, :only =>[:new,:create]
+
+ match '/rooms' => 'rooms#new',:via => :post
+ resources :rooms do
+  collection do
+    get 'showall'
+  end
+end
  #   resources :reservations
   #end
+  patch "access/updateprofile" => "access#updateprofile", :as => "access/updateprofile"
+
   root 'access#login'
   get 'user', :to =>"access#index"
   match ':controller(/:action(/:id))',:via => [:get,:post]

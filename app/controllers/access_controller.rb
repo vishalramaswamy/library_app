@@ -2,29 +2,55 @@ class AccessController < ApplicationController
   def index
   end
 
+  def manageadmin 
+    @access =  User.where(:isAdmin => "true" ).where.not(:username => $globalusername).order('created_at DESC')
+  end
+  def destroy
+    @access=User.find(params[:id])
+    @access.destroy
+    redirect_to :controller =>'Access' , :action => 'manageadmin'
+  end
   def login
-#    @user1 = User.new    
+#    @access = User.new    
 
   end
+def addadmin
+@access = User.new
+end
+def admincreate
+  @access = User.new(access_params)
+    if  @access.save
+      redirect_to :controller => 'Access', :action => 'roomadmin'
+    else 
+      render 'new'
+    end
+  end
+  def roomcreate
+
+  end
+
   def userprofile
-    @user1 = User.find($globaluserid)
+    @access = User.find($globaluserid)
 
   end
-def update
-    @user1 = User.find($globaluserid)
-    if @user1.update(params[:user].permit(:password,:email))
-      link_to :controller => 'Access', :action => 'roomuser'
+
+  def editprofile
+    @access = User.find($globaluserid)
+  end
+
+def updateprofile
+    @access = User.find($globaluserid)
+    if @access.update(params[:user].permit(:password,:email))
+     redirect_to :controller => 'Access', :action => 'roomuser'
+#        redirect_to @access
     else
-      render :controller => 'Access', :action => 'edit'
-          end
+      render 'edit'
+    end
 end
 
   def roomuser
- #   @user1 = User.find($globaluserid)
+ #   @access = User.find($globaluserid)
 
-  end
-  def edit
-    @user1 = User.find($globaluserid)
   end
 
 
@@ -41,7 +67,7 @@ $globalusername=User.select("username").where(:username => params[:username]).fi
         if params[:isAdmin]
           admin_user = User.select("isAdmin").where(:username => params[:username]).first
           if admin_user.isAdmin != nil
-            redirect_to(:action => 'index')
+            redirect_to(:action => 'roomadmin')
           else
             redirect_to(:action => 'login')
           end
@@ -63,4 +89,9 @@ end
 flash[:notice] = "Log out"
     redirect_to(:action => 'login')
   end
+
+  private
+    def access_params
+      params.require(:user).permit(:username,:password,:email,:isAdmin)
+    end
 end
