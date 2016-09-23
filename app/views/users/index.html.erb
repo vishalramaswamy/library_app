@@ -1,4 +1,11 @@
-<% @user.each do |user| %>
+<div id="main_content">
+  <div id="header">
+    <p>Library System</p>
+    <div class="buttons">
+      <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
+    </div>
+  </div>
+</div><% @user.each do |user| %>
 <h1>
 
 <%= user.username %>

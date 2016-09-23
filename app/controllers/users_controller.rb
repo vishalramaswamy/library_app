@@ -14,6 +14,9 @@ class UsersController < ApplicationController
 			render 'new'
 		end
 	end
+	def roomdetail
+
+	end
 	def edit
 		@user = User.find(params[:id])
 	end

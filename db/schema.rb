@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160921055018) do
+ActiveRecord::Schema.define(version: 20160923145017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20160921055018) do
 
   add_index "reservations", ["room_id"], name: "index_reservations_on_room_id", using: :btree
   add_index "reservations", ["user_id"], name: "index_reservations_on_user_id", using: :btree
+
+  create_table "roomadds", force: :cascade do |t|
+    t.string   "room_no"
+    t.string   "size"
+    t.string   "location"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "roomadds", ["user_id"], name: "index_roomadds_on_user_id", using: :btree
 
   create_table "rooms", force: :cascade do |t|
     t.string   "location"
@@ -67,4 +78,5 @@ ActiveRecord::Schema.define(version: 20160921055018) do
 
   add_foreign_key "reservations", "rooms"
   add_foreign_key "reservations", "users"
+  add_foreign_key "roomadds", "users"
 end

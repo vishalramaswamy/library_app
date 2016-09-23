@@ -10,7 +10,8 @@ post "rooms/new"
   resources :users #, :rooms do
   resources :rooms, :only =>[:new,:create]
 
- match '/rooms' => 'rooms#new',:via => :post
+ match '/rooms' => 'rooms#new',:via => [:get,:post]
+ match '/rooms' => 'rooms#show',:via => [:get,:post]
  resources :rooms do
   collection do
     get 'showall'

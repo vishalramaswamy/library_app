@@ -1,3 +1,12 @@
+
+<div id="main_content">
+  <div id="header">
+    <p>Library System</p>
+    <div class="buttons">
+      <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
+    </div>
+  </div>
+</div>
 <%= form_for @access, :url  => url_for(:controller => 'access', :action => 'updateprofile'), :method => :POST do |f| %>
 
 <% if @access.errors.any? %>

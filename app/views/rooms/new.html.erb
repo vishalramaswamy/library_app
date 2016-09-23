@@ -1,0 +1,41 @@
+<div id="main_content">
+  <div id="header">
+    <p>Library System</p>
+    <div class="buttons">
+      <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
+    </div>
+  </div>
+</div>
+<div id="sidebar">
+<div id="logo">
+<%= link_to root_path do %>
+<!--<%= image_tag "logo.jpg" %>-->
+<% end %>
+</div>
+<ul>
+	<li class="category"><%= link_to "Profile", :controller => 'access', :action => 'userprofile' %></li>
+	<li class="category"><%= link_to "Manage Admins", :controller => 'access', :action => 'manageadmin' %></li>
+		<li class="category"><%= link_to "Add Admin", :controller => 'access', :action => 'addadmin' %></li>
+		<li class="category"><%= link_to "Create a room", :controller => 'rooms', :action => 'new' %></li>
+		<li class="category"><%= link_to "View Members", :controller => 'access', :action => 'viewmembers' %></li>
+		<li class="category"><%= link_to "View Room", :controller => 'rooms', :action => 'index' %></li>
+</ul>
+</div>
+<%= form_for :roomadd, url:rooms_path do |f| %>
+
+<p>
+	<%= f.label :Roomnumber %>
+	<%= f.text_field :room_no %>
+</p>
+<p>
+	<%= f.label :Size %>
+	<%= f.select :size, [['Small','4'],['Medium','6'],['Large','12']] %>
+</p>
+<p>
+	<%= f.label :Location %>
+	<%= f.select :location, ['DHHILL','Hunt'] %>
+</p>
+<p>
+	<%= f.submit %>
+</p>
+<% end %>

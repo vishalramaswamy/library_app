@@ -25,10 +25,23 @@ def admincreate
       render 'new'
     end
   end
-  def roomcreate
+
+
+
+  def bookroomdate
 
   end
 
+
+  def roomcreate
+
+  end
+  def userprofilebyuser
+@access = User.find($globaluserid)
+  end
+def viewroomdetailsbyuser
+@room=Roomadd.all
+end
   def userprofile
     @access = User.find($globaluserid)
 
@@ -51,7 +64,9 @@ def updateprofile
       render 'edit'
     end
 end
-
+def viewmembers
+@access =  User.all
+end
   def roomuser
  #   @access = User.find($globaluserid)
 

@@ -14,11 +14,9 @@
 </div>
 <ul>
 	<li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
-	<li class="category"><%= link_to "Manage Admins", :action => 'manageadmin' %></li>
-		<li class="category"><%= link_to "Add Admin", :action => 'addadmin' %></li>
-		<li class="category"><%= link_to "Create a room", :controller => 'rooms', :action => 'new' %></li>
-		<li class="category"><%= link_to "View Members", :action => 'viewmembers' %></li>
-		<li class="category"><%= link_to "View Room", :controller => 'rooms', :action => 'index' %></li>
+	<li class="category">View History</li>
+	<li class="category"><%= link_to "View/Book Room", :controller => 'access',:action => 'viewroomdetailsbyuser' %></li>
+
 </ul>
 </div>
 <h1>

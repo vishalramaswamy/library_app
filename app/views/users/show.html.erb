@@ -1,4 +1,11 @@
-<div id="page_wrapper">
+<div id="main_content">
+  <div id="header">
+    <p>Library System</p>
+    <div class="buttons">
+       <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
+    </div>
+  </div>
+  </div><div id="page_wrapper">
 	<h1 class="title"> Welcome 
 <%= @user.username %>
 </h1>
