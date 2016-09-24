@@ -19,6 +19,20 @@
 
 </ul>
 </div>
-<h1>
-<%= link_to 'Select Time' , :controller => 'Access', :action => 'editprofile' %>
-</h1>
+
+<div>
+
+<%= form_tag(:action  => 'bookroomtime')do  %>
+
+
+<p>
+<%= label_tag(:booking_date) %>
+	<%= select_tag(:booking_date, options_for_select([ [1.day.ago.to_date], [2.days.ago.to_date],[3.days.ago.to_date],[4.days.ago.to_date],[5.days.ago.to_date],[6.days.ago.to_date],[7.days.ago.to_date]] ), {:class => 'form-control'})  %> 
+
+</p>
+	<p>
+	<%= submit_tag("Book") %>
+</p>
+<% end %>
+</div>
+

@@ -1,9 +1,11 @@
 class AccessController < ApplicationController
-  def index
-  end
+
 
   def manageadmin 
     @access =  User.where(:isAdmin => "true" ).where.not(:username => $globalusername).order('created_at DESC')
+  end
+  def finalbook
+    @booked = Booking.select('start_time').where(:booking_date => $globalbookdate).order('start_time')
   end
   def destroy
     @access=User.find(params[:id])
@@ -26,10 +28,18 @@ def admincreate
     end
   end
 
-
-
+def bookroomtime
+$globalbookdate= params[:booking_date]
+redirect_to :controller => 'Access', :action => 'finalbook'
+#@bookingobject=Booking.new(:booking_date => bookdate, :name => $globalusername, :roomnum => $globalroomno)
+#if @bookingobject.save
+#  redirect_to :controller => 'Access', :action => 'roomadmin'
+#else
+#  redirect_to :controller => 'Access', :action => 'viewroomdetailsbyuser'
+#end
+end
   def bookroomdate
-
+  $globalroomno=Roomadd.select("room_no").where(:room_no => params[:room_no]).first.room_no
   end
 
 

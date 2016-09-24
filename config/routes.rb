@@ -12,6 +12,7 @@ post "rooms/new"
 
  match '/rooms' => 'rooms#new',:via => [:get,:post]
  match '/rooms' => 'rooms#show',:via => [:get,:post]
+ match '/access' => 'access#index',:via =>[:get,:post]
  resources :rooms do
   collection do
     get 'showall'

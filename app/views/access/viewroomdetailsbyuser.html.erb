@@ -32,7 +32,7 @@
 			<td><%= roomadd.room_no %></td>
 			<td><%= roomadd.size %></td>
 			<td><%= roomadd.location %></td>
-			<td><%= link_to 'Book', :action => 'bookroomdate'%></td>
+			<td><%= link_to 'Book', :controller => 'Access' , :action => 'bookroomdate' , :room_no => roomadd.room_no %></td>
 				</tr>
 		<% end %>
 	</table>

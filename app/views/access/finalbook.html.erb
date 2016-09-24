@@ -1,0 +1,20 @@
+<p>
+<% a=(0..24).to_a %>
+<% @booked.each do |booked| %>
+<% if booked.start_time != nil %>
+<% bookedtime = booked.start_time.hour %>
+<% a.delete(bookedtime) %>
+<% a.delete(bookedtime.to_i + 1) %>
+<% a.delete(bookedtime.to_i - 1) %>
+<% end %>
+<% end %>
+</p>
+<%= form_tag(:action  => 'bookroomtime')do  %>
+<p>
+<%= label_tag(:booking_date) %>
+<%= select_tag(:booking_date, options_for_select(a))  %> 
+</p>
+<p>
+<%= submit_tag("Book") %>
+</p>
+<% end %>
