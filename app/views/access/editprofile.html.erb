@@ -1,4 +1,3 @@
-
 <div id="main_content">
   <div id="header">
     <p>Library System</p>
@@ -6,6 +5,19 @@
       <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
     </div>
   </div>
+</div>
+<div id="sidebar">
+<div id="logo">
+<%= link_to root_path do %>
+<!--<%= image_tag "logo.jpg" %>-->
+<% end %>
+</div>
+<ul>
+	<li class="category"><%= link_to "Profile", :action => 'userprofilebyuser' %></li>
+	<li class="category">View History</li>
+		<li class="category"><%= link_to "View/Book Room", :controller => 'access',:action => 'viewroomdetailsbyuser' %></li>
+
+</ul>
 </div>
 <%= form_for @access, :url  => url_for(:controller => 'access', :action => 'updateprofile'), :method => :POST do |f| %>
 

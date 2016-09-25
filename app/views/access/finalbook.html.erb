@@ -1,5 +1,30 @@
+<div id="main_content">
+  <div id="header">
+    <p>Library System</p>
+    <div class="buttons">
+      <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
+    </div>
+  </div>
+</div>
+<div id="sidebar">
+<div id="logo">
+<%= link_to root_path do %>
+<!--<%= image_tag "logo.jpg" %>-->
+<% end %>
+</div>
+<ul>
+	<li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
+	<li class="category">View History</li>
+	<li class="category"><%= link_to "View/Book Room", :controller => 'access',:action => 'viewroomdetailsbyuser' %></li>
+
+</ul>
+</div>
 <p>
-<% a=(0..24).to_a %>
+	<% if $globalbookdate=Time.now.strftime("%Y-%m-%d") %>
+	<% a=(((Time.now.hour)+1)..23).to_a %>
+	<% else %>
+<% a=(0..23).to_a %>
+<% end %>
 <% @booked.each do |booked| %>
 <% if booked.start_time != nil %>
 <% bookedtime = booked.start_time.hour %>
@@ -9,10 +34,10 @@
 <% end %>
 <% end %>
 </p>
-<%= form_tag(:action  => 'bookroomtime')do  %>
+<%= form_tag(:action  => 'finall')do  %>
 <p>
-<%= label_tag(:booking_date) %>
-<%= select_tag(:booking_date, options_for_select(a))  %> 
+<%= label_tag(:Time_Select) %>
+<%= select_tag(:start_time, options_for_select(a))  %> 
 </p>
 <p>
 <%= submit_tag("Book") %>

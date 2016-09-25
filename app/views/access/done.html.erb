@@ -20,8 +20,7 @@
 </ul>
 </div>
 <h1>
-<%= @access.username %>
-<%= @access.email %>|
-<%= link_to 'edit' , :controller => 'Access', :action => 'editprofile' %>
+You Booking is completed!!
+<%= Time.at($globalbooktime.to_i*3600).utc.strftime("%H:%M:%S")%>
+<% Booking.create(roomnum: $globalroomno, name: $globalusername, booking_date: $globalbookdate, start_time: $globalbooktime) %>
 </h1>
-

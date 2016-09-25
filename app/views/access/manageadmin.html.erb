@@ -5,8 +5,7 @@
       <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
     </div>
   </div>
-</div><% @access.each do |access| %>
-<div id="sidebar">
+  <div id="sidebar">
 <div id="logo">
 <%= link_to root_path do %>
 <!--<%= image_tag "logo.jpg" %>-->
@@ -21,11 +20,13 @@
 		<li class="category"><%= link_to "View Room", :controller => 'rooms', :action => 'index' %></li>
 </ul>
 </div>
+</div><% @access.each do |access| %>
+
 <h1>
 
 <%= access.username %>
 <%= access.email %>|
-<%= link_to 'Delete' ,:controller =>'Access' , :action => 'destroy' , id: access.id, method: :delete,data: {confirm: 'Are you sure?'} %>
+<%= link_to 'Delete' ,:controller =>'Access' , :action => 'destro' , id: access.id, method: :delete,data: {confirm: 'Are you sure?'} %>
 </h1>
 
 <% end %>

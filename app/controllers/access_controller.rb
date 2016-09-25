@@ -10,21 +10,30 @@ class AccessController < ApplicationController
   def destroy
     @access=User.find(params[:id])
     @access.destroy
+    redirect_to :controller =>'Access' , :action => 'viewmembers'
+  end
+    def destro
+    @access=User.find(params[:id])
+    @access.destroy
     redirect_to :controller =>'Access' , :action => 'manageadmin'
   end
   def login
-#    @access = User.new    
+  #  @access = User.new    
 
   end
+  def done
+
+  end
+
 def addadmin
 @access = User.new
 end
 def admincreate
-  @access = User.new(access_params)
+  @access = User.new(user_params)
     if  @access.save
       redirect_to :controller => 'Access', :action => 'roomadmin'
     else 
-      render 'new'
+      render 'addadmin'
     end
   end
 
@@ -41,7 +50,10 @@ end
   def bookroomdate
   $globalroomno=Roomadd.select("room_no").where(:room_no => params[:room_no]).first.room_no
   end
-
+def finall
+$globalbooktime= params[:start_time]
+redirect_to :controller => 'Access', :action => 'done'
+end
 
   def roomcreate
 
@@ -75,7 +87,7 @@ def updateprofile
     end
 end
 def viewmembers
-@access =  User.all
+@access =  User.where(:isAdmin => nil )
 end
   def roomuser
  #   @access = User.find($globaluserid)
@@ -121,7 +133,7 @@ flash[:notice] = "Log out"
   end
 
   private
-    def access_params
+    def user_params
       params.require(:user).permit(:username,:password,:email,:isAdmin)
     end
 end

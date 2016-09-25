@@ -27,7 +27,7 @@
 
 <p>
 <%= label_tag(:booking_date) %>
-	<%= select_tag(:booking_date, options_for_select([ [1.day.ago.to_date], [2.days.ago.to_date],[3.days.ago.to_date],[4.days.ago.to_date],[5.days.ago.to_date],[6.days.ago.to_date],[7.days.ago.to_date]] ), {:class => 'form-control'})  %> 
+	<%= select_tag(:booking_date, options_for_select([ [1.day.ago.advance(:days =>0).to_date],[1.day.ago.advance(:days =>1).to_date],[1.day.ago.advance(:days =>2).to_date],[1.day.ago.advance(:days =>3).to_date],[1.day.ago.advance(:days =>4).to_date],[1.day.ago.advance(:days =>5).to_date],[1.day.ago.advance(:days =>6).to_date]] ), {:class => 'form-control'})  %> 
 
 </p>
 	<p>
