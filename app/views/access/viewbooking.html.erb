@@ -19,32 +19,23 @@
 
 </ul>
 </div>
-<%= form_for @access, :url  => url_for(:controller => 'access', :action => 'updateprofile'), :method => :POST do |f| %>
+<body>
+	<table style="width:100%">
+		<tr>
+			<th> Room number</th>
+			<th>Booking Date</th>
+			<th>Start Time</th>
+		</tr>
 
-<% if @access.errors.any? %>
-<div id="errors">
-	<h2> <%= pluralize(@access.errors.count, "error") %> 
-	</h2>
-	<ul>
-		<% @access.errors.full_messages.each do |msg| %>
-<li> <%= msg  %></li>
-<% end %>
-	</ul>
-</div>
-<% end %>
-<p>
-<%=f.label :username %>
-<%=f.label $globalusername %>
-</p>
-<p>
-<%=f.label :password %>
-<%=f.password_field :password%>
-</p>
-<p>
-<%=f.label :email %>
-<%=f.text_field :email%>
-</p>
-<p>
-<%= f.submit %>
-</p>
-<% end %> 
+		<% @room.each do |roomadd| %>
+		<tr>
+			<td><%= roomadd.roomnum %></td>
+			<td><%= roomadd.booking_date %></td>
+			<td><%= roomadd.start_time.hour %></td>
+			<td><%= link_to 'Delete', :controller => 'Access' , :action => 'dest' , :roomnum => roomadd.id,method: :delete %></td>
+
+				</tr>
+		<% end %>
+	</table>
+
+</body>

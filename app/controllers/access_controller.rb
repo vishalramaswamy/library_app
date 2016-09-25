@@ -17,9 +17,18 @@ class AccessController < ApplicationController
     @access.destroy
     redirect_to :controller =>'Access' , :action => 'manageadmin'
   end
-  def login
-  #  @access = User.new    
+    def dest
+    @access=Booking.find(params[:roomnum])
+    @access.destroy
+    redirect_to :controller =>'Access' , :action => 'viewbooking'
+  end
 
+  def login
+    @access = User.new    
+
+  end
+  def viewbooking
+@room=Booking.where(:name => $globalusername)
   end
   def done
 
@@ -83,7 +92,7 @@ def updateprofile
    end
 #        redirect_to @access
     else
-      render 'edit'
+      render 'editprofile'
     end
 end
 def viewmembers
@@ -111,7 +120,7 @@ $globalusername=User.select("username").where(:username => params[:username]).fi
           if admin_user.isAdmin != nil
             redirect_to(:action => 'roomadmin')
           else
-            redirect_to(:action => 'login')
+            redirect_to :action => 'login', error: "An error message for the user"
           end
         else
           redirect_to(:action => 'roomuser')
