@@ -2,39 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d179620-17a5-4eec-a4ac-b2457974f34f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/access/admincreatebooking.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/access/searchreservationbyroomno.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/access/searchroombookinghistory.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/access/searchroomfutureschedule.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/access/searchuserbooking.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/access/viewallbooking.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/access/viewbookingsbyroomnoadmin.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/access/viewreservationsadmin.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/access/viewroombookinghistory.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/access/viewroomfutureschedule.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/access/viewuserbooking.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/access_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/access_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/addadmin.html.erb" afterPath="$PROJECT_DIR$/app/views/access/addadmin.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/bookroomdate.html.erb" afterPath="$PROJECT_DIR$/app/views/access/bookroomdate.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/done.html.erb" afterPath="$PROJECT_DIR$/app/views/access/done.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/editprofile.html.erb" afterPath="$PROJECT_DIR$/app/views/access/editprofile.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/finalbook.html.erb" afterPath="$PROJECT_DIR$/app/views/access/finalbook.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/login.html.erb" afterPath="$PROJECT_DIR$/app/views/access/login.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/manageadmin.html.erb" afterPath="$PROJECT_DIR$/app/views/access/manageadmin.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/roomadmin.html.erb" afterPath="$PROJECT_DIR$/app/views/access/roomadmin.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/roomuser.html.erb" afterPath="$PROJECT_DIR$/app/views/access/roomuser.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/userprofile.html.erb" afterPath="$PROJECT_DIR$/app/views/access/userprofile.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/userprofilebyuser.html.erb" afterPath="$PROJECT_DIR$/app/views/access/userprofilebyuser.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/viewbooking.html.erb" afterPath="$PROJECT_DIR$/app/views/access/viewbooking.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/viewmembers.html.erb" afterPath="$PROJECT_DIR$/app/views/access/viewmembers.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/viewroomdetailsbyuser.html.erb" afterPath="$PROJECT_DIR$/app/views/access/viewroomdetailsbyuser.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rooms/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/rooms/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rooms/index.html.erb" afterPath="$PROJECT_DIR$/app/views/rooms/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rooms/new.html.erb" afterPath="$PROJECT_DIR$/app/views/rooms/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rooms/show.html.erb" afterPath="$PROJECT_DIR$/app/views/rooms/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="immense-beyond-37509.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,18 +70,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewroombookinghistory.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/access/viewroombookinghistory.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="searchroombookinghistory.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/access/searchroombookinghistory.html.erb">
           <provider selected="true" editor-type-id="text-editor">
@@ -163,13 +119,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="roomuser.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="roomuser.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/access/roomuser.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+            <state relative-caret-position="390">
+              <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userprofilebyuser.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/access/userprofilebyuser.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -226,7 +194,6 @@
         <option value="$PROJECT_DIR$/app/views/access/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/access/userprofilebyuser.html.erb" />
         <option value="$PROJECT_DIR$/app/views/access/viewroomdetailsbyuser.html.erb" />
         <option value="$PROJECT_DIR$/app/views/access/bookroomdate.html.erb" />
         <option value="$PROJECT_DIR$/app/views/access/done.html.erb" />
@@ -259,6 +226,7 @@
         <option value="$PROJECT_DIR$/app/views/access/addadmin.html.erb" />
         <option value="$PROJECT_DIR$/app/views/access/login.html.erb" />
         <option value="$PROJECT_DIR$/app/views/access/roomuser.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/access/userprofilebyuser.html.erb" />
       </list>
     </option>
   </component>
@@ -644,21 +612,21 @@
       <workItem from="1474761902944" duration="7092000" />
       <workItem from="1474780616795" duration="3406000" />
       <workItem from="1474817709293" duration="5000" />
-      <workItem from="1474817724995" duration="28799000" />
+      <workItem from="1474817724995" duration="29680000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39302000" />
+    <option name="totallyTimeSpent" value="40183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1541" height="855" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22712524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22712524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17521091" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17521091" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -737,14 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/access/userprofilebyuser.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1150,10 +1110,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/access/roomuser.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+        <state relative-caret-position="390">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/access/userprofilebyuser.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

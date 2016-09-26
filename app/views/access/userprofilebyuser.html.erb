@@ -1,17 +1,11 @@
-<div id="main_content">
   <div id="header">
     <p>Library System</p>
     <div class="buttons">
       <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
     </div>
   </div>
-</div>
 <div id="sidebar">
-<div id="logo">
-<%= link_to root_path do %>
-<!--<%= image_tag "logo.jpg" %>-->
-<% end %>
-</div>
+
 <ul>
   <li class="category"><%= link_to "Home", :action => 'roomuser' %></li>
   <li class="category"><%= link_to "Profile", :action => 'userprofilebyuser' %></li>
@@ -21,9 +15,11 @@
 
 </ul>
 </div>
-<h1>
-<%= @access.username %>
-<%= @access.email %>|
-<%= link_to 'edit' , :controller => 'Access', :action => 'editprofile' %>
-</h1>
+  <div style="margin:5% 5%;">
 
+  <h1>Edit User Profile</h1>
+    User Name: <%= @access.username %>
+Email Id: <%= @access.email %>|
+<button class="button"><%= link_to 'edit' , :controller => 'Access', :action => 'editprofile' %></button>
+</h1>
+</div>
