@@ -63,3 +63,4 @@ ORDER BY c.conname
   [1m[36mBooking Load (0.3ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."roomnum" = $1 AND (booking_date > '2016-09-25')[0m  [["roomnum", "102"]]
   [1m[35mBooking Load (0.4ms)[0m  SELECT  "bookings".* FROM "bookings"  ORDER BY "bookings"."id" DESC LIMIT 1
   [1m[36mBooking Load (0.3ms)[0m  [1mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mBooking Load (0.6ms)[0m  [1mSELECT  "bookings".* FROM "bookings"  ORDER BY "bookings"."id" DESC LIMIT 1[0m

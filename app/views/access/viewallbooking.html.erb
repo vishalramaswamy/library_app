@@ -47,7 +47,7 @@
             <td><%= result.roomnum %></td>
             <td><%= result.name %></td>
             <td><%= result.booking_date %></td>
-            <td><%= result.start_time.hour%>:00 - <%= (result.start_time.hour)+2%>:00</td>
+            <td><%= result.start_time.hour%>:00 - <%= ((result.start_time.hour)+2)%24 %>:00</td>
             <td><u><%= link_to 'Delete', :controller => 'Access' , :action => 'destroybooking' , :roomnum => result.id,method: :delete %></u></td>
           </tr>
       <% end %>
