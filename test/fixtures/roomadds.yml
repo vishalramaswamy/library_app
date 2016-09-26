@@ -1,13 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  room_no: MyString
-  size: MyString
-  location: MyString
-  user_id: 
-
-two:
-  room_no: MyString
-  size: MyString
-  location: MyString
-  user_id: 
+  id: 100
+  room_no: '500'
+  size: 'Medium'
+  location: 'Hunt'
+  

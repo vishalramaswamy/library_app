@@ -7,6 +7,38 @@ class AccessController < ApplicationController
   def finalbook
     @booked = Booking.select('start_time').where(:booking_date => $globalbookdate).order('start_time')
   end
+  def viewallbooking
+    @allbooking = Booking.all
+  end
+  def viewroomfutureschedule
+    @roomfuture = Roomadd.all
+  end
+  def viewroombookinghistory
+    @roomhistory = Roomadd.all
+  end
+  def viewuserbooking
+    @userbooking = User.all
+  end
+  def admincreatebooking
+    @createbooking = Roomadd.all
+  end
+  def searchroomfutureschedule
+    $globalroom_no = params[:room_no]
+    @searchresult = Booking.where(:roomnum => $globalroom_no).where("booking_date > ?" , Time.now.to_date)
+  end
+  def searchroombookinghistory
+    $globalroom_no = params[:room_no]
+    @searchresult = Booking.where(:roomnum => $globalroom_no).where("booking_date < ?" , Time.now.to_date)
+  end
+  def searchuserbooking
+    $globaluser_name = params[:user_name]
+    @searchresult = Booking.where(:name => $globaluser_name)
+  end
+  def destroybooking
+    @access=Booking.find(params[:roomnum])
+    @access.destroy
+    redirect_to :controller =>'Access' , :action => 'viewallbooking'
+  end
   def destroy
     @access=User.find(params[:id])
     @access.destroy
@@ -28,7 +60,7 @@ class AccessController < ApplicationController
 
   end
   def viewbooking
-@room=Booking.where(:name => $globalusername)
+    @room=Booking.where(:name => $globalusername)
   end
   def done
 
@@ -82,13 +114,17 @@ end
     @access = User.find($globaluserid)
   end
 
+  def editprofileadmin
+    @access = User.find($globaluserid)
+  end
+
 def updateprofile
     @access = User.find($globaluserid)
     if @access.update(params[:user].permit(:password,:email))
-     if $globaladminuser.isAdmin != nil
+     if User.where(:isAdmin => 'true')
      redirect_to :controller => 'Access', :action => 'roomadmin'
    else
-     redirect_to :controller => 'Access', :action => 'roomadmin'
+     redirect_to :controller => 'Access', :action => 'roomuser'
    end
 #        redirect_to @access
     else
@@ -99,10 +135,13 @@ def viewmembers
 @access =  User.where(:isAdmin => nil )
 end
   def roomuser
- #   @access = User.find($globaluserid)
+    @access = User.find($globaluserid)
 
   end
+  def roomadmin
+    @access = User.find($globaluserid)
 
+  end
 
   def attempt_login
 authorized_user=false

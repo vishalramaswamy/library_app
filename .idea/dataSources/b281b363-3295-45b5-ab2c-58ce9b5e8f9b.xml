@@ -1,0 +1,347 @@
+<dataSource name="PostgreSQL - libapp@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
+    <database id="1" name="libapp">
+      <object-id>16385</object-id>
+      <visible>1</visible>
+    </database>
+    <database id="2" name="postgres">
+      <object-id>12641</object-id>
+    </database>
+    <schema id="3" parent="1" name="public">
+      <object-id>2200</object-id>
+      <visible>1</visible>
+      <introspection-state-number>947</introspection-state-number>
+      <introspection-timestamp>2016-09-25.12:17:07.607</introspection-timestamp>
+    </schema>
+    <schema id="4" parent="1" name="pg_catalog">
+      <object-id>11</object-id>
+    </schema>
+    <schema id="5" parent="1" name="pg_toast">
+      <object-id>99</object-id>
+    </schema>
+    <schema id="6" parent="1" name="pg_temp_1">
+      <object-id>11816</object-id>
+    </schema>
+    <schema id="7" parent="1" name="pg_toast_temp_1">
+      <object-id>11817</object-id>
+    </schema>
+    <schema id="8" parent="1" name="information_schema">
+      <object-id>12349</object-id>
+    </schema>
+    <sequence id="9" parent="3" name="bookings_id_seq">
+      <object-id>16452</object-id>
+      <state-number>947</state-number>
+    </sequence>
+    <sequence id="10" parent="3" name="reservations_id_seq">
+      <object-id>16415</object-id>
+      <state-number>944</state-number>
+    </sequence>
+    <sequence id="11" parent="3" name="roomadds_id_seq">
+      <object-id>16435</object-id>
+      <state-number>946</state-number>
+    </sequence>
+    <sequence id="12" parent="3" name="rooms_id_seq">
+      <object-id>16404</object-id>
+      <state-number>943</state-number>
+    </sequence>
+    <sequence id="13" parent="3" name="users_id_seq">
+      <object-id>16393</object-id>
+      <state-number>942</state-number>
+    </sequence>
+    <table id="14" parent="3" name="bookings">
+      <object-id>16454</object-id>
+      <state-number>947</state-number>
+    </table>
+    <table id="15" parent="3" name="reservations">
+      <object-id>16417</object-id>
+      <state-number>944</state-number>
+    </table>
+    <table id="16" parent="3" name="roomadds">
+      <object-id>16437</object-id>
+      <state-number>946</state-number>
+    </table>
+    <table id="17" parent="3" name="rooms">
+      <object-id>16406</object-id>
+      <state-number>944</state-number>
+    </table>
+    <table id="18" parent="3" name="schema_migrations">
+      <object-id>16386</object-id>
+      <state-number>940</state-number>
+    </table>
+    <table id="19" parent="3" name="users">
+      <object-id>16395</object-id>
+      <state-number>946</state-number>
+    </table>
+    <column id="20" parent="14" name="id">
+      <state-number>947</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval('bookings_id_seq'::regclass)</default-expression>
+    </column>
+    <column id="21" parent="14" name="booking_date">
+      <state-number>947</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="22" parent="14" name="start_time">
+      <state-number>947</state-number>
+      <data-type>time|0</data-type>
+    </column>
+    <column id="23" parent="14" name="end_time">
+      <state-number>947</state-number>
+      <data-type>time|0</data-type>
+    </column>
+    <column id="24" parent="14" name="roomnum">
+      <state-number>947</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="25" parent="14" name="name">
+      <state-number>947</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="26" parent="14" name="created_at">
+      <state-number>947</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="27" parent="14" name="updated_at">
+      <state-number>947</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="28" parent="14" name="bookings_pkey">
+      <object-id>16461</object-id>
+      <columns>id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="29" parent="14" name="bookings_pkey">
+      <object-id>16462</object-id>
+      <columns>id</columns>
+      <underlying-index>bookings_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="30" parent="15" name="id">
+      <state-number>944</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval('reservations_id_seq'::regclass)</default-expression>
+    </column>
+    <column id="31" parent="15" name="bookingdate">
+      <state-number>944</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="32" parent="15" name="starttime">
+      <state-number>944</state-number>
+      <data-type>time|0</data-type>
+    </column>
+    <column id="33" parent="15" name="endtime">
+      <state-number>944</state-number>
+      <data-type>time|0</data-type>
+    </column>
+    <column id="34" parent="15" name="user_id">
+      <state-number>944</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="35" parent="15" name="room_id">
+      <state-number>944</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="36" parent="15" name="created_at">
+      <state-number>944</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="37" parent="15" name="updated_at">
+      <state-number>944</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="38" parent="15" name="reservations_pkey">
+      <object-id>16421</object-id>
+      <columns>id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="39" parent="15" name="index_reservations_on_user_id">
+      <object-id>16423</object-id>
+      <columns>user_id</columns>
+      <desc-columns />
+    </index>
+    <index id="40" parent="15" name="index_reservations_on_room_id">
+      <object-id>16424</object-id>
+      <columns>room_id</columns>
+      <desc-columns />
+    </index>
+    <key id="41" parent="15" name="reservations_pkey">
+      <object-id>16422</object-id>
+      <columns>id</columns>
+      <underlying-index>reservations_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="42" parent="15" name="fk_rails_48a92fce51">
+      <object-id>16425</object-id>
+      <columns>user_id</columns>
+      <ref-key>~.users.users_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="43" parent="15" name="fk_rails_78d1025283">
+      <object-id>16430</object-id>
+      <columns>room_id</columns>
+      <ref-key>~.rooms.rooms_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="44" parent="16" name="id">
+      <state-number>946</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval('roomadds_id_seq'::regclass)</default-expression>
+    </column>
+    <column id="45" parent="16" name="room_no">
+      <state-number>946</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="46" parent="16" name="size">
+      <state-number>946</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="47" parent="16" name="location">
+      <state-number>946</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="48" parent="16" name="user_id">
+      <state-number>946</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="49" parent="16" name="created_at">
+      <state-number>946</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="50" parent="16" name="updated_at">
+      <state-number>946</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="51" parent="16" name="roomadds_pkey">
+      <object-id>16444</object-id>
+      <columns>id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="52" parent="16" name="index_roomadds_on_user_id">
+      <object-id>16446</object-id>
+      <columns>user_id</columns>
+      <desc-columns />
+    </index>
+    <key id="53" parent="16" name="roomadds_pkey">
+      <object-id>16445</object-id>
+      <columns>id</columns>
+      <underlying-index>roomadds_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="54" parent="16" name="fk_rails_88aed7f8e2">
+      <object-id>16447</object-id>
+      <columns>user_id</columns>
+      <ref-key>~.users.users_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="55" parent="17" name="id">
+      <state-number>943</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval('rooms_id_seq'::regclass)</default-expression>
+    </column>
+    <column id="56" parent="17" name="location">
+      <state-number>943</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="57" parent="17" name="size">
+      <state-number>943</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="58" parent="17" name="created_at">
+      <state-number>943</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="59" parent="17" name="updated_at">
+      <state-number>943</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="60" parent="17" name="rooms_pkey">
+      <object-id>16413</object-id>
+      <columns>id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="61" parent="17" name="rooms_pkey">
+      <object-id>16414</object-id>
+      <columns>id</columns>
+      <underlying-index>rooms_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="62" parent="18" name="version">
+      <state-number>940</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar|0</data-type>
+    </column>
+    <index id="63" parent="18" name="unique_schema_migrations">
+      <object-id>16392</object-id>
+      <columns>version</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <column id="64" parent="19" name="id">
+      <state-number>942</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval('users_id_seq'::regclass)</default-expression>
+    </column>
+    <column id="65" parent="19" name="username">
+      <state-number>942</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="66" parent="19" name="password">
+      <state-number>942</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="67" parent="19" name="email">
+      <state-number>942</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="68" parent="19" name="isAdmin">
+      <state-number>942</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="69" parent="19" name="created_at">
+      <state-number>942</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="70" parent="19" name="updated_at">
+      <state-number>942</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="71" parent="19" name="password_digest">
+      <state-number>945</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <index id="72" parent="19" name="users_pkey">
+      <object-id>16402</object-id>
+      <columns>id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="73" parent="19" name="users_pkey">
+      <object-id>16403</object-id>
+      <columns>id</columns>
+      <underlying-index>users_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

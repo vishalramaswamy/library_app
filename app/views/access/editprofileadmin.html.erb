@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="header">
+    <p>Library System</p>
+    <div class="buttons">
+      <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
+    </div>
+  </div>
+  <div id="sidebar">
+
+    <ul>
+      <li class="category"><%= link_to "Home", :action => 'roomadmin' %></li>
+      <li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
+      <li class="category"><%= link_to "Add Admin", :action => 'addadmin' %></li>
+      <li class="category"><%= link_to "Manage Admins", :action => 'manageadmin' %></li>
+      <li class="category"><%= link_to "Manage Members", :action => 'viewmembers' %></li>
+      <li class="category"><%= link_to "Add Room", :controller => 'rooms', :action => 'new' %></li>
+      <li class="category"><%= link_to "Manage Rooms", :controller => 'rooms', :action => 'index' %></li>
+      <li class="category"><%= link_to "View All Reservations", :controller => 'access', :action => 'viewallbooking' %></li>
+      <li class="category"><%= link_to "View Future Schedule For Rooms", :controller => 'access', :action => 'viewroomfutureschedule' %></li>
+      <li class="category"><%= link_to "View Reservations History For Rooms", :controller => 'access', :action => 'viewroombookinghistory' %></li>
+      <li class="category"><%= link_to "View Reservations By Users", :controller => 'access', :action => 'viewuserbooking' %></li>
+      <li class="category"><%= link_to "Create/Delete Reservations", :controller => 'access', :action => 'admincreatebooking' %></li>
+    </ul>
+  </div>
+  <div style="margin:5% 5%;">
+
+  <%= form_for @access, :url  => url_for(:controller => 'access', :action => 'updateprofile'), :method => :POST do |f| %>
+
+<% if @access.errors.any? %>
+<div id="errors">
+	<h2> <%= pluralize(@access.errors.count, "error") %> 
+	</h2>
+	<ul>
+		<% @access.errors.full_messages.each do |msg| %>
+<li> <%= msg  %></li>
+<% end %>
+	</ul>
+</div>
+<% end %>
+    <h1>Edit Profile Details</h1>
+    <h3>
+<p>
+User Name: <strong><%=f.label $globalusername %></strong>
+</p>
+<p>
+Password: <%=f.password_field :password%>
+</p>
+<p>
+Email ID: <%=f.text_field :email%>
+</p>
+<p>
+<%= f.submit %>
+</p>
+    </h3>
+<% end %>
+
+</div>
+</body>
+</html>

@@ -13,14 +13,15 @@
 <% end %>
 </div>
 <ul>
+  <li class="category"><%= link_to "Home", :action => 'roomuser' %></li>
 	<li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
 	<li class="category">View History</li>
 	<li class="category"><%= link_to "View/Book Room", :controller => 'access',:action => 'viewroomdetailsbyuser' %></li>
-
+  <li class="category"><%= link_to "View Booking", :controller => 'access',:action => 'viewbooking' %></li>
 </ul>
 </div>
 <p>
-	<% if $globalbookdate=Time.now.strftime("%Y-%m-%d") %>
+	<% if $globalbookdate==Time.now.strftime("%Y-%m-%d") %>
 	<% a=(((Time.now.hour)+1)..23).to_a %>
 	<% else %>
 <% a=(0..23).to_a %>

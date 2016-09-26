@@ -8,7 +8,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-		<div id="main_content">
   <div id="header">
     <p>Library System</p>
     <div class="buttons">
@@ -17,20 +16,19 @@
     </div>
   </div>
 <div id="sidebar">
-<div id="logo">
-<%= link_to root_path do %>
-<!--<%= image_tag "logo.jpg" %>-->
-<% end %>
-</div>
+
 <ul>
-	<li class="category"><%= link_to "Profile", :action => 'userprofilebyuser' %></li>
-	<li class="category">View History</li>
+  <li class="category"><%= link_to "Home", :action => 'roomuser' %></li>
+  <li class="category"><%= link_to "Profile", :action => 'userprofilebyuser' %></li>
 	<li class="category"><%= link_to "View/Book Room", :controller => 'access',:action => 'viewroomdetailsbyuser' %></li>
   <li class="category"><%= link_to "View Booking", :controller => 'access',:action => 'viewbooking' %></li>
 
 </ul>
 </div>
 		<%= yield %>
-</div>
+  <div style="margin:5% 5%;">
+
+  <h1>Library Member Home</h1>
+    </div>
 </body>
 </html>

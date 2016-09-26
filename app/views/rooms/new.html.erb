@@ -1,41 +1,43 @@
-<div id="main_content">
   <div id="header">
     <p>Library System</p>
     <div class="buttons">
       <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
     </div>
   </div>
-</div>
 <div id="sidebar">
-<div id="logo">
-<%= link_to root_path do %>
-<!--<%= image_tag "logo.jpg" %>-->
-<% end %>
-</div>
-<ul>
-	<li class="category"><%= link_to "Profile", :controller => 'access', :action => 'userprofile' %></li>
-	<li class="category"><%= link_to "Manage Admins", :controller => 'access', :action => 'manageadmin' %></li>
-		<li class="category"><%= link_to "Add Admin", :controller => 'access', :action => 'addadmin' %></li>
-		<li class="category"><%= link_to "Create a room", :controller => 'rooms', :action => 'new' %></li>
-		<li class="category"><%= link_to "View Members", :controller => 'access', :action => 'viewmembers' %></li>
-		<li class="category"><%= link_to "View Room", :controller => 'rooms', :action => 'index' %></li>
-</ul>
-</div>
-<%= form_for :roomadd, url:rooms_path do |f| %>
 
+  <ul>
+    <li class="category"><%= link_to "Home", :controller => 'access',  :action => 'roomadmin' %></li>
+    <li class="category"><%= link_to "Profile", :controller => 'access', :action => 'userprofile' %></li>
+    <li class="category"><%= link_to "Add Admin", :controller => 'access', :action => 'addadmin' %></li>
+    <li class="category"><%= link_to "Manage Admins", :controller => 'access', :action => 'manageadmin' %></li>
+    <li class="category"><%= link_to "Manage Members", :controller => 'access', :action => 'viewmembers' %></li>
+    <li class="category"><%= link_to "Add Room", :controller => 'rooms', :action => 'new' %></li>
+    <li class="category"><%= link_to "Manage Rooms", :controller => 'rooms', :action => 'index' %></li>
+    <li class="category"><%= link_to "View All Reservations", :controller => 'access', :action => 'viewallbooking' %></li>
+    <li class="category"><%= link_to "View Future Schedule For Rooms", :controller => 'access', :action => 'viewroomfutureschedule' %></li>
+    <li class="category"><%= link_to "View Reservations History For Rooms", :controller => 'access', :action => 'viewroombookinghistory' %></li>
+    <li class="category"><%= link_to "View Reservations By Users", :controller => 'access', :action => 'viewuserbooking' %></li>
+    <li class="category"><%= link_to "Create/Delete Reservations", :controller => 'access', :action => 'admincreatebooking' %></li>
+  </ul>
+</div>
+  <div style="margin:5% 5%;">
+
+  <h1>Add a New Room</h1>
+<%= form_for :roomadd, url:rooms_path do |f| %>
+<h3>
 <p>
-	<%= f.label :Roomnumber %>
-	<%= f.text_field :room_no %>
+Room No: <%= f.text_field :room_no %>
 </p>
 <p>
-	<%= f.label :Size %>
-	<%= f.select :size, [['Small','4'],['Medium','6'],['Large','12']] %>
+Size:	<%= f.select :size, [['Small','4'],['Medium','6'],['Large','12']] %>
 </p>
 <p>
-	<%= f.label :Location %>
-	<%= f.select :location, ['DHHILL','Hunt'] %>
+Location:	<%= f.select :location, ['DHHILL','Hunt'] %>
 </p>
 <p>
-	<%= f.submit %>
+	<%= f.submit "Create Room" %>
 </p>
+</h3>
 <% end %>
+    </div>

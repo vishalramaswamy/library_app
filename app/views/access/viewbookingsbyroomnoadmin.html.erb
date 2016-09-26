@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="main_content">
+  <div id="header">
+    <p>Library System</p>
+    <div class="buttons">
+      <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
+    </div>
+  </div>
+  <div id="sidebar">
+    <div id="logo">
+      <%= link_to root_path do %>
+          <!--<%= image_tag "logo.jpg" %>-->
+      <% end %>
+    </div>
+    <ul>
+      <li class="category"><%= link_to "Home", :action => 'roomadmin' %></li>
+      <li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
+      <li class="category"><%= link_to "Add Admin", :action => 'addadmin' %></li>
+      <li class="category"><%= link_to "Manage Admins", :action => 'manageadmin' %></li>
+      <li class="category"><%= link_to "Manage Members", :action => 'viewmembers' %></li>
+      <li class="category"><%= link_to "Add Room", :controller => 'rooms', :action => 'new' %></li>
+      <li class="category"><%= link_to "Manage Rooms", :controller => 'rooms', :action => 'index' %></li>
+      <li class="category"><%= link_to "View Reservations", :controller => 'access', :action => 'viewbookingsbyroomnoadmin' %></li>
+    </ul>
+  </div>
+</div>
+<h1>Search Reservations By Room Number</h1>
+<% a=Array.new %>
+<% @bookbyroom.each do |bookbyroom| %>
+<% roomno = bookbyroom.room_no%>
+<% a.push(roomno) %>
+<%end%>
+
+<%= form_tag(:action  => 'searchreservationbyroomno')do  %>
+    <p>
+      Select Room: <%= select_tag(:room_no, options_for_select(a))  %>
+    </p>
+    <p>
+      <%= submit_tag("Search") %>
+    </p>
+<% end %>
+
+        </body>
+</html>

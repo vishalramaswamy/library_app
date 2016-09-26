@@ -1,4 +1,3 @@
-<div id="main_content">
   <div id="header">
     <p>Library System</p>
     <div class="buttons">
@@ -6,27 +5,38 @@
     </div>
   </div>
   <div id="sidebar">
-<div id="logo">
-<%= link_to root_path do %>
-<!--<%= image_tag "logo.jpg" %>-->
-<% end %>
+
+    <ul>
+      <li class="category"><%= link_to "Home", :action => 'roomadmin' %></li>
+      <li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
+      <li class="category"><%= link_to "Add Admin", :action => 'addadmin' %></li>
+      <li class="category"><%= link_to "Manage Admins", :action => 'manageadmin' %></li>
+      <li class="category"><%= link_to "Manage Members", :action => 'viewmembers' %></li>
+      <li class="category"><%= link_to "Add Room", :controller => 'rooms', :action => 'new' %></li>
+      <li class="category"><%= link_to "Manage Rooms", :controller => 'rooms', :action => 'index' %></li>
+      <li class="category"><%= link_to "View All Reservations", :controller => 'access', :action => 'viewallbooking' %></li>
+      <li class="category"><%= link_to "View Future Schedule For Rooms", :controller => 'access', :action => 'viewroomfutureschedule' %></li>
+      <li class="category"><%= link_to "View Reservations History For Rooms", :controller => 'access', :action => 'viewroombookinghistory' %></li>
+      <li class="category"><%= link_to "View Reservations By Users", :controller => 'access', :action => 'viewuserbooking' %></li>
+      <li class="category"><%= link_to "Create/Delete Reservations", :controller => 'access', :action => 'admincreatebooking' %></li>
+    </ul>
 </div>
-<ul>
-	<li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
-	<li class="category"><%= link_to "Manage Admins", :action => 'manageadmin' %></li>
-		<li class="category"><%= link_to "Add Admin", :action => 'addadmin' %></li>
-		<li class="category"><%= link_to "Create a room", :controller => 'rooms', :action => 'new' %></li>
-		<li class="category"><%= link_to "View Members", :action => 'viewmembers' %></li>
-<li class="category"><%= link_to "View Room", :controller => 'rooms', :action => 'index' %></li>
-</ul>
-</div>
-</div><% @access.each do |access| %>
+  <div style="margin:5% 5%;">
 
-<h1>
+  <h1>List Of Available Members:</h1>
+<table style="width:100%; font-size: larger;">
+  <tr>
+    <th>User Name</th>
+    <th>Email id</th>
+    <th></th>
+  </tr>
 
-<%= access.username %>
-<%= access.email %>|
-<%= link_to 'Delete' ,:controller =>'Access' , :action => 'destroy' , id: access.id, method: :delete,data: {confirm: 'Are you sure?'} %>
-</h1>
-
+<% @access.each do |access| %>
+      <tr>
+<td><%= access.username %></td>
+<td><%= access.email %></td>
+<td><u><%= link_to 'Delete' ,:controller =>'Access' , :action => 'destroy' , id: access.id, method: :delete,data: {confirm: 'Are you sure?'} %></u></td>
+      </tr>
 <% end %>
+  </table>
+    </div>

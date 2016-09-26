@@ -8,55 +8,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="sidebar">
-<div id="logo">
-<%= link_to root_path do %>
-<!--<%= image_tag "logo.jpg" %>-->
-<% end %>
-</div>
-<!--<ul>
-# <li class="category"><%= link_to "Home", root_path%></li>
-  <li class="category">About</li>
-</ul>
--->
-</div>
-<div id="main_content">
- <!-- <div id="header">
-    <p>Library System</p>
-    <div class="buttons">
-      <button class="button"><%= link_to "Sign Up", :controller => 'Users', :action => 'new' %></button>
-      <button class="button"><%= link_to "Login", :controller => 'Access', :action => 'login' %></button>
-    </div>
-  </div>
--->
-<div id="main_content">
+
+
   <div id="header">
     <p>Library System</p>
     <div class="buttons">
       <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
     </div>
   </div>
-  </div>
     <%= yield %>
-</div>
-</body>
-</html><% provide(:title, 'Sign up') %>
 <div id="sidebar">
-<div id="logo">
-<%= link_to root_path do %>
-<!--<%= image_tag "logo.jpg" %>-->
-<% end %>
-</div>
-<ul>
-  <li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
-  <li class="category"><%= link_to "Manage Admins", :action => 'manageadmin' %></li>
+
+  <ul>
+    <li class="category"><%= link_to "Home", :action => 'roomadmin' %></li>
+    <li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
     <li class="category"><%= link_to "Add Admin", :action => 'addadmin' %></li>
-    <li class="category"><%= link_to "Create a room", :controller => 'rooms', :action => 'new' %></li>
-    <li class="category"><%= link_to "View Members", :action => 'viewmembers' %></li>
-    <li class="category"><%= link_to "View Room", :controller => 'rooms', :action => 'index' %></li>
-</ul>
+    <li class="category"><%= link_to "Manage Admins", :action => 'manageadmin' %></li>
+    <li class="category"><%= link_to "Manage Members", :action => 'viewmembers' %></li>
+    <li class="category"><%= link_to "Add Room", :controller => 'rooms', :action => 'new' %></li>
+    <li class="category"><%= link_to "Manage Rooms", :controller => 'rooms', :action => 'index' %></li>
+    <li class="category"><%= link_to "View All Reservations", :controller => 'access', :action => 'viewallbooking' %></li>
+    <li class="category"><%= link_to "View Future Schedule For Rooms", :controller => 'access', :action => 'viewroomfutureschedule' %></li>
+    <li class="category"><%= link_to "View Reservations History For Rooms", :controller => 'access', :action => 'viewroombookinghistory' %></li>
+    <li class="category"><%= link_to "View Reservations By Users", :controller => 'access', :action => 'viewuserbooking' %></li>
+    <li class="category"><%= link_to "Create/Delete Reservations", :controller => 'access', :action => 'admincreatebooking' %></li>
+  </ul>
 </div>
-<h1>Sign up</h1>
+
+<div style="margin:5% 5%;">
+
+<h1>Add New Admin</h1>
 
 
 
@@ -71,23 +52,22 @@
 <% end %>
 	</ul>
 <% end %>
-      <%= f.label :username %>
-      <%= f.text_field :username %>
+    <h3>
+User Name: <%= f.text_field :username %>
 <br>
-      <%= f.label :email %>
-      <br>
-      <%= f.email_field :email %>
+Email ID:  <%= f.email_field :email %>
 <br>
-      <%= f.label :password %>
-      <br>
-
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.label :isAdmin, "Admin?" %>
-      <%= f.select :isAdmin, [['Yes','true']]  %>
-      <%= f.submit "Create my account" %>
+Password:  <%= f.password_field :password %>
+<br>
+Confirm: <%= f.password_field :password_confirmation %>
+<br><br>
+Is Admin: <%= f.select :isAdmin, [['Yes','true']]  %>
+      <br><br><br>
+      <%= f.submit "Create Account" %>
+    </h3>
     <% end %>
 
+  </div>
+  </div>
+</body>
+</html>

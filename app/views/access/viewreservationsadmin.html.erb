@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="main_content">
+  <div id="header">
+    <p>Library System</p>
+    <div class="buttons">
+      <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
+    </div>
+  </div>
+  <div id="sidebar">
+    <div id="logo">
+      <%= link_to root_path do %>
+          <!--<%= image_tag "logo.jpg" %>-->
+      <% end %>
+    </div>
+    <ul>
+      <li class="category"><%= link_to "Home", :action => 'roomadmin' %></li>
+      <li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
+      <li class="category"><%= link_to "Add Admin", :action => 'addadmin' %></li>
+      <li class="category"><%= link_to "Manage Admins", :action => 'manageadmin' %></li>
+      <li class="category"><%= link_to "Manage Members", :action => 'viewmembers' %></li>
+      <li class="category"><%= link_to "Add Room", :controller => 'rooms', :action => 'new' %></li>
+      <li class="category"><%= link_to "Manage Rooms", :controller => 'rooms', :action => 'index' %></li>
+    </ul>
+  </div>
+</div>
+<%= form_for :roomadd, url:rooms_path(@room) do |f| %>
+
+    <%= form_for (@access) , :url  => url_for(:controller => 'access', :action => 'admincreate')  do |f| %>
+
+        <% options = options_from_collection_for_select(@list, 'id', 'name') %>
+        <%= f.select :all_val,  options %>
+        <% options = options_from_collection_for_select()
+    Select User: <%= f.select :username,  %>
+<table style="width:100%">
+  <tr>
+    <th> Room number</th>
+    <th>Booking Date</th>
+    <th>Start Time</th>
+  </tr>
+
+  <% @room.each do |roomadd| %>
+      <tr>
+        <td><%= roomadd.roomnum %></td>
+        <td><%= roomadd.booking_date %></td>
+        <td><%= roomadd.start_time.hour %></td>
+        <td><%= link_to 'Delete', :controller => 'Access' , :action => 'dest' , :roomnum => roomadd.id,method: :delete %></td>
+
+      </tr>
+  <% end %>
+</table>
+
+</body>
+</html>

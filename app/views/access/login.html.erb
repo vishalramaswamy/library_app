@@ -9,20 +9,15 @@
 </head>
 <body>
 <div id="sidebar">
-<div id="logo">
-<%= link_to root_path do %>
-<!--<%= image_tag "logo.jpg" %>-->
-<% end %>
-</div>
+
 <!--<ul>
 # <li class="category"><%= link_to "Home", root_path%></li>
   <li class="category">About</li>
 </ul>
 -->
 </div>
-<div id="main_content">
   <div id="header">
-    <p>Library System</p>
+    <strong><p style="color: darkcyan; font-family: 'Lucida Sans'; font-size: larger;">Library System</p></strong>
     <div class="buttons">
       <button class="button"><%= link_to "Sign Up", :controller => 'Users', :action => 'new' %></button>
       <button class="button"><%= link_to "Login", :controller => 'Access', :action => 'login' %></button>
@@ -30,24 +25,28 @@
   </div>
 
     <%= yield %>
-</div>
-</body>
-</html>
+
+<div style="margin:5% 5%;">
+
+
 <% @page_title = "Login " %>
  <%= form_tag(:action  => 'attempt_login') do  %>
  
     
       <%= label_tag(:username) %>
       <%= text_field_tag(:username) %>
-<br>
+<br><br>
       <%= label_tag(:password) %>
       <br>
       <%= password_field_tag (:password) %>
-      <br>
-            <%= label_tag(:Admin?) %>
-
+      <br><br>
+      <%= label_tag(:Admin?) %>
       <%= check_box_tag(:isAdmin) %>
-<br>
+<br><br>
 
       <%= submit_tag("Login") %>
     <% end %>
+</div>
+
+</body>
+</html>
