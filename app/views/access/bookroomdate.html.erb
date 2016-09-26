@@ -1,38 +1,30 @@
-<div id="main_content">
   <div id="header">
     <p>Library System</p>
     <div class="buttons">
       <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
     </div>
   </div>
-</div>
 <div id="sidebar">
-<div id="logo">
-<%= link_to root_path do %>
-<!--<%= image_tag "logo.jpg" %>-->
-<% end %>
-</div>
 <ul>
   <li class="category"><%= link_to "Home", :action => 'roomuser' %></li>
 	<li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
-	<li class="category">View History</li>
 	<li class="category"><%= link_to "View/Book Room", :controller => 'access',:action => 'viewroomdetailsbyuser' %></li>
   <li class="category"><%= link_to "View Booking", :controller => 'access',:action => 'viewbooking' %></li>
 </ul>
 </div>
 
-<div>
+  <div style="margin:5% 5%;">
 
 <%= form_tag(:action  => 'bookroomtime')do  %>
 
-
+<h1>Select Date</h1>
 <p>
 <%= label_tag(:booking_date) %>
 	<%= select_tag(:booking_date, options_for_select([ [1.day.ago.advance(:days =>1).to_date],[1.day.ago.advance(:days =>2).to_date],[1.day.ago.advance(:days =>3).to_date],[1.day.ago.advance(:days =>4).to_date],[1.day.ago.advance(:days =>5).to_date],[1.day.ago.advance(:days =>6).to_date],[1.day.ago.advance(:days =>7).to_date]] ), {:class => 'form-control'})  %> 
 
 </p>
 	<p>
-	<%= submit_tag("Book") %>
+	<%= submit_tag("Continue") %>
 </p>
 <% end %>
 </div>

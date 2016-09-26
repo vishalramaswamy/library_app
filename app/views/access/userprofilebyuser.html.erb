@@ -9,7 +9,6 @@
 <ul>
   <li class="category"><%= link_to "Home", :action => 'roomuser' %></li>
   <li class="category"><%= link_to "Profile", :action => 'userprofilebyuser' %></li>
-	<li class="category">View History</li>
 	<li class="category"><%= link_to "View/Book Room", :controller => 'access',:action => 'viewroomdetailsbyuser' %></li>
   <li class="category"><%= link_to "View Booking", :controller => 'access',:action => 'viewbooking' %></li>
 
@@ -17,9 +16,9 @@
 </div>
   <div style="margin:5% 5%;">
 
-  <h1>Edit User Profile</h1>
-    User Name: <%= @access.username %>
-Email Id: <%= @access.email %>|
+  <h1>User Profile</h1>
+    User Name: <strong><%= @access.username %></strong><br><br>
+Email Id: <strong><%= @access.email %></strong><br><br>
 <button class="button"><%= link_to 'edit' , :controller => 'Access', :action => 'editprofile' %></button>
 </h1>
 </div>

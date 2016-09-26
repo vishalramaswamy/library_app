@@ -1,0 +1,48 @@
+<div id="header">
+  <p>Library System</p>
+  <div class="buttons">
+    <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
+  </div>
+</div>
+<div id="sidebar">
+  <ul>
+    <li class="category"><%= link_to "Home", :action => 'roomadmin' %></li>
+    <li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
+    <li class="category"><%= link_to "Add Admin", :action => 'addadmin' %></li>
+    <li class="category"><%= link_to "Manage Admins", :action => 'manageadmin' %></li>
+    <li class="category"><%= link_to "Manage Members", :action => 'viewmembers' %></li>
+    <li class="category"><%= link_to "Add Room", :controller => 'rooms', :action => 'new' %></li>
+    <li class="category"><%= link_to "Manage Rooms", :controller => 'rooms', :action => 'index' %></li>
+    <li class="category"><%= link_to "View All Reservations", :controller => 'access', :action => 'viewallbooking' %></li>
+    <li class="category"><%= link_to "View Future Schedule For Rooms", :controller => 'access', :action => 'viewroomfutureschedule' %></li>
+    <li class="category"><%= link_to "View Reservations History For Rooms", :controller => 'access', :action => 'viewroombookinghistory' %></li>
+    <li class="category"><%= link_to "View Reservations By Users", :controller => 'access', :action => 'viewuserbooking' %></li>
+    <li class="category"><%= link_to "Create/Delete Reservations", :controller => 'access', :action => 'admincreatebooking' %></li>
+  </ul>
+</div>
+<div style="margin:5% 5%;">
+  <h1>Select Time</h1>
+  <p>
+    <% if $globaladminbookdate==Time.now.strftime("%Y-%m-%d") %>
+        <% a=(((Time.now.hour)+1)..23).to_a %>
+    <% else %>
+        <% a=(0..23).to_a %>
+    <% end %>
+    <% @adminbooked.each do |booked| %>
+        <% if booked.start_time != nil %>
+            <% bookedtime = booked.start_time.hour %>
+            <% a.delete(bookedtime) %>
+            <% a.delete(bookedtime.to_i + 1) %>
+            <% a.delete(bookedtime.to_i - 1) %>
+        <% end %>
+    <% end %>
+  </p>
+  <%= form_tag(:action  => 'finaladmin')do  %>
+      <p>
+        Select Start Time (hrs):  <%= select_tag(:start_time, options_for_select(a))  %>
+      </p>
+      <p>
+        <%= submit_tag("Book") %>
+      </p>
+  <% end %>
+</div>

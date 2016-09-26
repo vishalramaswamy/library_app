@@ -7,6 +7,9 @@ class AccessController < ApplicationController
   def finalbook
     @booked = Booking.select('start_time').where(:booking_date => $globalbookdate).order('start_time')
   end
+  def finaladminbook
+    @adminbooked = Booking.select('start_time').where(:booking_date => $globaladminbookdate).order('start_time')
+  end
   def viewallbooking
     @allbooking = Booking.all
   end
@@ -91,10 +94,27 @@ end
   def bookroomdate
   $globalroomno=Roomadd.select("room_no").where(:room_no => params[:room_no]).first.room_no
   end
+  def admincreatebooking
+    @room=Roomadd.all
+  end
+  def bookadminroomdate
+    @userbooking = User.all
+    $globaladminroomno=Roomadd.select("room_no").where(:room_no => params[:room_no]).first.room_no
+  end
+  def bookadminroomtime
+    $globaladminbookdate= params[:booking_date]
+    $globaladminuser= params[:user_name]
+    redirect_to :controller => 'Access', :action => 'finaladminbook'
+    end
 def finall
 $globalbooktime= params[:start_time]
 redirect_to :controller => 'Access', :action => 'done'
 end
+  def finaladmin
+    $globaladminbooktime= params[:start_time]
+    redirect_to :controller => 'Access', :action => 'admindone'
+  end
+
 
   def roomcreate
 

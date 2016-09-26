@@ -1,27 +1,24 @@
-<div id="main_content">
   <div id="header">
     <p>Library System</p>
     <div class="buttons">
       <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
     </div>
   </div>
-</div>
 <div id="sidebar">
-<div id="logo">
-<%= link_to root_path do %>
-<!--<%= image_tag "logo.jpg" %>-->
-<% end %>
-</div>
+
 <ul>
   <li class="category"><%= link_to "Home", :action => 'roomuser' %></li>
 	<li class="category"><%= link_to "Profile", :action => 'userprofilebyuser' %></li>
-	<li class="category">View History</li>
 	<li class="category"><%= link_to "View/Book Room", :controller => 'access',:action => 'viewroomdetailsbyuser' %></li>
   <li class="category"><%= link_to "View Booking", :controller => 'access',:action => 'viewbooking' %></li>
 </ul>
 </div>
-<h1>
-You Booking is completed!!
-<%= Time.at($globalbooktime.to_i*3600).utc.strftime("%H:%M:%S")%>
+  <div style="margin:5% 5%;">
+
+  <h1>
+Booking Complete!</h1><br><br>
+<%hour = Time.at($globalbooktime.to_i*3600).utc.strftime("%H")%>
+  <h2>You have Booked from <%= Time.at($globalbooktime.to_i*3600).utc.strftime("%H")%>:00 to <%= (hour.to_i+2)%24 %>:00.
 <% Booking.create(roomnum: $globalroomno, name: $globalusername, booking_date: $globalbookdate, start_time: $globalbooktime) %>
-</h1>
+</h2>
+</div>

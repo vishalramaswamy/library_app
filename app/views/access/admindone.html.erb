@@ -1,0 +1,32 @@
+<div id="header">
+  <p>Library System</p>
+  <div class="buttons">
+    <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
+  </div>
+</div>
+<div id="sidebar">
+
+  <ul>
+    <li class="category"><%= link_to "Home", :action => 'roomadmin' %></li>
+    <li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
+    <li class="category"><%= link_to "Add Admin", :action => 'addadmin' %></li>
+    <li class="category"><%= link_to "Manage Admins", :action => 'manageadmin' %></li>
+    <li class="category"><%= link_to "Manage Members", :action => 'viewmembers' %></li>
+    <li class="category"><%= link_to "Add Room", :controller => 'rooms', :action => 'new' %></li>
+    <li class="category"><%= link_to "Manage Rooms", :controller => 'rooms', :action => 'index' %></li>
+    <li class="category"><%= link_to "View All Reservations", :controller => 'access', :action => 'viewallbooking' %></li>
+    <li class="category"><%= link_to "View Future Schedule For Rooms", :controller => 'access', :action => 'viewroomfutureschedule' %></li>
+    <li class="category"><%= link_to "View Reservations History For Rooms", :controller => 'access', :action => 'viewroombookinghistory' %></li>
+    <li class="category"><%= link_to "View Reservations By Users", :controller => 'access', :action => 'viewuserbooking' %></li>
+    <li class="category"><%= link_to "Create/Delete Reservations", :controller => 'access', :action => 'admincreatebooking' %></li>
+  </ul>
+</div>
+<div style="margin:5% 5%;">
+
+  <h1>
+    Booking Complete!</h1><br><br>
+  <%hour = Time.at($globaladminbooktime.to_i*3600).utc.strftime("%H")%>
+  <h2>You have Booked from <%= Time.at($globaladminbooktime.to_i*3600).utc.strftime("%H")%>:00 to <%= (hour.to_i+2)%24 %>:00.
+    <% Booking.create(roomnum: $globaladminroomno, name: $globaladminuser, booking_date: $globaladminbookdate, start_time: $globaladminbooktime) %>
+  </h2>
+</div>

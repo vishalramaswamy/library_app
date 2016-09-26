@@ -1,0 +1,45 @@
+<div id="header">
+  <p>Library System</p>
+  <div class="buttons">
+    <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
+  </div>
+</div>
+<div id="sidebar">
+  <ul>
+    <li class="category"><%= link_to "Home", :action => 'roomadmin' %></li>
+    <li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
+    <li class="category"><%= link_to "Add Admin", :action => 'addadmin' %></li>
+    <li class="category"><%= link_to "Manage Admins", :action => 'manageadmin' %></li>
+    <li class="category"><%= link_to "Manage Members", :action => 'viewmembers' %></li>
+    <li class="category"><%= link_to "Add Room", :controller => 'rooms', :action => 'new' %></li>
+    <li class="category"><%= link_to "Manage Rooms", :controller => 'rooms', :action => 'index' %></li>
+    <li class="category"><%= link_to "View All Reservations", :controller => 'access', :action => 'viewallbooking' %></li>
+    <li class="category"><%= link_to "View Future Schedule For Rooms", :controller => 'access', :action => 'viewroomfutureschedule' %></li>
+    <li class="category"><%= link_to "View Reservations History For Rooms", :controller => 'access', :action => 'viewroombookinghistory' %></li>
+    <li class="category"><%= link_to "View Reservations By Users", :controller => 'access', :action => 'viewuserbooking' %></li>
+    <li class="category"><%= link_to "Create/Delete Reservations", :controller => 'access', :action => 'admincreatebooking' %></li>
+  </ul>
+</div>
+
+<div style="margin:5% 5%;">
+  <% a=Array.new %>
+  <% @userbooking.each do |bookbyuser| %>
+      <% user = bookbyuser.username%>
+      <% a.push(user) %>
+  <%end%>
+  <%= form_tag(:action  => 'bookadminroomtime')do  %>
+
+      <h1>Enter Details</h1>
+      <p>
+      <p>
+        Select Username For Reservation: <%= select_tag(:user_name, options_for_select(a))  %>
+      </p>
+      Booking Date:  <%= select_tag(:booking_date, options_for_select([ [1.day.ago.advance(:days =>1).to_date],[1.day.ago.advance(:days =>2).to_date],[1.day.ago.advance(:days =>3).to_date],[1.day.ago.advance(:days =>4).to_date],[1.day.ago.advance(:days =>5).to_date],[1.day.ago.advance(:days =>6).to_date],[1.day.ago.advance(:days =>7).to_date]] ), {:class => 'form-control'})  %>
+
+      </p>
+      <p>
+        <%= submit_tag("Continue") %>
+      </p>
+  <% end %>
+</div>
+

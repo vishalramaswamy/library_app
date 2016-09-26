@@ -37,21 +37,24 @@
     </ul>
   </div>
 </div>
-<h1>Search Reservations By Room Number</h1>
-<% a=Array.new %>
-<% @bookbyroom.each do |bookbyroom| %>
-    <% roomno = bookbyroom.room_no%>
-    <% a.push(roomno) %>
-<%end%>
-
-<%= form_tag(:action  => 'searchreservationbyroomno')do  %>
-    <p>
-      Select Room: <%= select_tag(:room_no, options_for_select(a))  %>
-    </p>
-    <p>
-      <%= submit_tag("Search") %>
-    </p>
-<% end %>
-
+<div style="margin:5% 5%;">
+  <h1>View & Book Rooms</h1>
+  <h3>
+    <table style="width:100%">
+      <tr>
+        <th> Room number</th>
+        <th>Size</th>
+        <th>Location</th>
+      </tr>
+      <% @room.each do |roomadd| %>
+          <tr>
+            <td><%= roomadd.room_no %></td>
+            <td><%= roomadd.size %> Chairs</td>
+            <td><%= roomadd.location %></td>
+            <td><u><%= link_to 'Book', :controller => 'Access' , :action => 'bookadminroomdate' , :room_no => roomadd.room_no %></u></td>
+          </tr>
+      <% end %>
+    </table></h3>
+</div>
 </body>
 </html>

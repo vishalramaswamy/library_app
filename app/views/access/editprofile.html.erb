@@ -1,25 +1,18 @@
-<div id="main_content">
   <div id="header">
     <p>Library System</p>
     <div class="buttons">
       <button class="button"><%= link_to "Logout", :controller => 'Access', :action => 'login' %></button>
     </div>
   </div>
-</div>
 <div id="sidebar">
-<div id="logo">
-<%= link_to root_path do %>
-<!--<%= image_tag "logo.jpg" %>-->
-<% end %>
-</div>
 <ul>
   <li class="category"><%= link_to "Home", :action => 'roomuser' %></li>
 	<li class="category"><%= link_to "Profile", :action => 'userprofilebyuser' %></li>
-	<li class="category">View History</li>
   <li class="category"><%= link_to "View/Book Room", :controller => 'access',:action => 'viewroomdetailsbyuser' %></li>
   <li class="category"><%= link_to "View Booking", :controller => 'access',:action => 'viewbooking' %></li></ul>
 </div>
 <%= form_for @access, :url  => url_for(:controller => 'access', :action => 'updateprofile'), :method => :POST do |f| %>
+      <div style="margin:5% 5%;">
 
 <% if @access.errors.any? %>
 <div id="errors">
@@ -32,19 +25,18 @@
 	</ul>
 </div>
 <% end %>
+        <h1>Edit User Profile</h1>
 <p>
-<%=f.label :username %>
-<%=f.label $globalusername %>
+User Name: <strong><%=f.label $globalusername %></strong>
 </p>
 <p>
-<%=f.label :password %>
-<%=f.password_field :password%>
+Password: <%=f.password_field :password%>
 </p>
 <p>
-<%=f.label :email %>
-<%=f.text_field :email%>
+Email Id: <%=f.text_field :email%>
 </p>
 <p>
-<%= f.submit %>
+<%= f.submit "Update"%>
 </p>
-<% end %> 
+<% end %>
+  </div>
