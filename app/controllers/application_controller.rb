@@ -4,6 +4,5 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
     add_flash_types :error
 
-  config.time_zone = 'Eastern Time (US & Canada)'
-  config.active_record.default_timezone = 'Eastern Time (US & Canada)'
+
 end
