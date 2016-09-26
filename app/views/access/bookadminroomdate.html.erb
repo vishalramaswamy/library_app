@@ -5,19 +5,20 @@
   </div>
 </div>
 <div id="sidebar">
+
   <ul>
-    <li class="category"><%= link_to "Home", :action => 'roomadmin' %></li>
-    <li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
-    <li class="category"><%= link_to "Add Admin", :action => 'addadmin' %></li>
-    <li class="category"><%= link_to "Manage Admins", :action => 'manageadmin' %></li>
-    <li class="category"><%= link_to "Manage Members", :action => 'viewmembers' %></li>
+    <li class="category"><%= link_to "Home", :controller => 'access',  :action => 'roomadmin' %></li>
+    <li class="category"><%= link_to "Profile", :controller => 'access', :action => 'userprofile' %></li>
+    <li class="category"><%= link_to "Add Admin", :controller => 'access', :action => 'addadmin' %></li>
+    <li class="category"><%= link_to "Manage Admins", :controller => 'access', :action => 'manageadmin' %></li>
+    <li class="category"><%= link_to "Manage Members", :controller => 'access', :action => 'viewmembers' %></li>
     <li class="category"><%= link_to "Add Room", :controller => 'rooms', :action => 'new' %></li>
     <li class="category"><%= link_to "Manage Rooms", :controller => 'rooms', :action => 'index' %></li>
-    <li class="category"><%= link_to "View All Reservations", :controller => 'access', :action => 'viewallbooking' %></li>
+    <li class="category"><%= link_to "View/Delete Reservations", :controller => 'access', :action => 'viewallbooking' %></li>
     <li class="category"><%= link_to "View Future Schedule For Rooms", :controller => 'access', :action => 'viewroomfutureschedule' %></li>
     <li class="category"><%= link_to "View Reservations History For Rooms", :controller => 'access', :action => 'viewroombookinghistory' %></li>
     <li class="category"><%= link_to "View Reservations By Users", :controller => 'access', :action => 'viewuserbooking' %></li>
-    <li class="category"><%= link_to "Create/Delete Reservations", :controller => 'access', :action => 'admincreatebooking' %></li>
+    <li class="category"><%= link_to "Create Reservations", :controller => 'access', :action => 'admincreatebooking' %></li>
   </ul>
 </div>
 

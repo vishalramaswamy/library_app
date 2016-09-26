@@ -2,7 +2,7 @@ class AccessController < ApplicationController
 
 
   def manageadmin 
-    @access =  User.where(:isAdmin => "true" ).where.not(:username => $globalusername).order('created_at DESC')
+    @access =  User.where(:isAdmin => "true" ).where.not(:username => $globalusername).where.not(:username => "admin").order('created_at DESC')
   end
   def finalbook
     @booked = Booking.select('start_time').where(:booking_date => $globalbookdate).order('start_time')
@@ -171,7 +171,7 @@ admin_user=false
       if found_user
         authorized_user = found_user.authenticate(params[:password])
         $globaluserid=User.select("id").where(:username => params[:username]).first.id
-$globalusername=User.select("username").where(:username => params[:username]).first.username
+        $globalusername=User.select("username").where(:username => params[:username]).first.username
       if authorized_user
         if params[:isAdmin]
           admin_user = User.select("isAdmin").where(:username => params[:username]).first
