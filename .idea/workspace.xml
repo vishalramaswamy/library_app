@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d179620-17a5-4eec-a4ac-b2457974f34f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/access_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/access_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/addadmin.html.erb" afterPath="$PROJECT_DIR$/app/views/access/addadmin.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/admincreatebooking.html.erb" afterPath="$PROJECT_DIR$/app/views/access/admincreatebooking.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/admindone.html.erb" afterPath="$PROJECT_DIR$/app/views/access/admindone.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/bookadminroomdate.html.erb" afterPath="$PROJECT_DIR$/app/views/access/bookadminroomdate.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/editprofileadmin.html.erb" afterPath="$PROJECT_DIR$/app/views/access/editprofileadmin.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/finaladminbook.html.erb" afterPath="$PROJECT_DIR$/app/views/access/finaladminbook.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/manageadmin.html.erb" afterPath="$PROJECT_DIR$/app/views/access/manageadmin.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/roomadmin.html.erb" afterPath="$PROJECT_DIR$/app/views/access/roomadmin.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/searchroombookinghistory.html.erb" afterPath="$PROJECT_DIR$/app/views/access/searchroombookinghistory.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/searchroomfutureschedule.html.erb" afterPath="$PROJECT_DIR$/app/views/access/searchroomfutureschedule.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/searchuserbooking.html.erb" afterPath="$PROJECT_DIR$/app/views/access/searchuserbooking.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/userprofile.html.erb" afterPath="$PROJECT_DIR$/app/views/access/userprofile.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/viewallbooking.html.erb" afterPath="$PROJECT_DIR$/app/views/access/viewallbooking.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/viewroombookinghistory.html.erb" afterPath="$PROJECT_DIR$/app/views/access/viewroombookinghistory.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/viewroomfutureschedule.html.erb" afterPath="$PROJECT_DIR$/app/views/access/viewroomfutureschedule.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/viewuserbooking.html.erb" afterPath="$PROJECT_DIR$/app/views/access/viewuserbooking.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rooms/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/rooms/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rooms/index.html.erb" afterPath="$PROJECT_DIR$/app/views/rooms/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rooms/new.html.erb" afterPath="$PROJECT_DIR$/app/views/rooms/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rooms/show.html.erb" afterPath="$PROJECT_DIR$/app/views/rooms/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/access/viewmembers.html.erb" afterPath="$PROJECT_DIR$/app/views/access/viewmembers.html.erb" />
     </list>
     <ignored path="immense-beyond-37509.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,11 +60,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="access_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="access_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/access_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="315">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewmembers.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/access/viewmembers.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -96,16 +85,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchroombookinghistory.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/access/searchroombookinghistory.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -134,8 +113,8 @@
       <file leaf-file-name="viewuserbooking.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/access/viewuserbooking.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+            <state relative-caret-position="133">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="32" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -205,7 +184,6 @@
         <option value="$PROJECT_DIR$/app/views/access/viewreservationsadmin.html.erb" />
         <option value="$PROJECT_DIR$/app/views/access/viewbookingsbyroomnoadmin.html.erb" />
         <option value="$PROJECT_DIR$/app/views/access/searchreservationbyroomno.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/access/viewmembers.html.erb" />
         <option value="$PROJECT_DIR$/app/views/access/login.html.erb" />
         <option value="$PROJECT_DIR$/app/views/access/roomuser.html.erb" />
         <option value="$PROJECT_DIR$/app/views/access/userprofilebyuser.html.erb" />
@@ -238,6 +216,7 @@
         <option value="$PROJECT_DIR$/app/views/access/finaladminbook.html.erb" />
         <option value="$PROJECT_DIR$/app/views/access/admindone.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/access_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/access/viewmembers.html.erb" />
       </list>
     </option>
   </component>
@@ -637,21 +616,21 @@
       <workItem from="1474761902944" duration="7092000" />
       <workItem from="1474780616795" duration="3406000" />
       <workItem from="1474817709293" duration="5000" />
-      <workItem from="1474817724995" duration="39850000" />
+      <workItem from="1474817724995" duration="43737000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50353000" />
+    <option name="totallyTimeSpent" value="54240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1541" height="855" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22712524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17521091" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17521091" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -890,14 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/access/viewmembers.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/access/done.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1066,14 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/access/viewuserbooking.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/access/bookadminroomdate.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -1116,8 +1079,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/access_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="315">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/access/viewuserbooking.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="32" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/access/viewmembers.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
           <folding />
         </state>
       </provider>
