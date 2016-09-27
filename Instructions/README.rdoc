@@ -1,28 +1,59 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Library Study Room Booking App
 
-Things you may want to cover:
+Created By: Vishal Ramaswamy, Naren Thanikesh, Shyam Ramakrishnan
 
-* Ruby version
+Server URL: https://immense-beyond-37509.herokuapp.com/
 
-* System dependencies
+Ruby version: 2.3
 
-* Configuration
+Rails version: 4.2.5.1
 
-* Database creation
+Database: PostgreSQL
 
-* Database initialization
+Preconfigured Admin:
 
-* How to run the test suite
+Username: admin
+Password: password1
 
-* Services (job queues, cache servers, search engines, etc.)
+Features Implemented:
 
-* Deployment instructions
+Libaray Members -
 
-* ...
+Users can Sign Up to become Library Members. Following are the roles of a Library Member:
+
+- Sign Up, Login
+- Update his Profile
+- View Rooms on Room No, Building and Size
+- Book Rooms in advance upto 1 Week for a specified Start Time upto 2 Hours
+- Delete existing Reservations
+
+Admin -
+
+One can Login as a Super Admin/Admin added by the Super Admin, Following are the roles of a Library Admin:
+
+- Sign Up, Login
+- Update his Profile
+- Add other admins, Manage existing Admins(Update/Delete)
+- Manage existing Members
+- Add Rooms, Manage existing Rooms
+- Create Reservations on behalf of a User
+- View/Delete existing Reservations
+- View Schedule for Rooms
+- View Reservation History by Username/Room No
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Test Cases:
+
+Unit Test and Functionality Test for Rooms has been done. 
+
+Extra Credits Functionalities:
+
+Admin can book more than one room on behalf of another member by clicking on Create Reservations on the Menu.
+
+
+
+
+
+
