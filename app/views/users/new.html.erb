@@ -9,18 +9,13 @@
 </head>
 <body>
 <div id="sidebar">
-<div id="logo">
-<%= link_to root_path do %>
-<!--<%= image_tag "logo.jpg" %>-->
-<% end %>
-</div>
+
 <!--<ul>
 # <li class="category"><%= link_to "Home", root_path%></li>
   <li class="category">About</li>
 </ul>
 -->
 </div>
-<div id="main_content">
   <div id="header">
     <p>Library System</p>
     <div class="buttons">
@@ -30,32 +25,30 @@
   </div>
 
     <%= yield %>
-</div>
-</body>
-</html>
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<div style="margin:5% 5%;">
+  <% provide(:title, 'Sign up') %>
+  <h1>Sign up</h1>
 
 
 
-    <%= form_for(@user) do |f| %>
-    <% if @user.errors.any? %>
-<div id="errors">
-	<h2> <%= pluralize(@user.errors.count, "error") %> 
-	</h2>
-	<ul>
-		<% @user.errors.full_messages.each do |msg| %>
-<li> <%= msg  %></li>
-<% end %>
-	</ul>
-<% end %>
+  <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+          <div id="errors">
+            <h2> <%= pluralize(@user.errors.count, "error") %>
+            </h2>
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                  <li> <%= msg  %></li>
+              <% end %>
+            </ul>
+      <% end %>
       <%= f.label :username %>
       <%= f.text_field :username %>
-<br>
+      <br>
       <%= f.label :email %>
       <br>
       <%= f.email_field :email %>
-<br>
+      <br>
       <%= f.label :password %>
       <br>
 
@@ -65,6 +58,11 @@
       <%= f.password_field :password_confirmation %>
 
       <%= f.submit "Create my account" %>
-    <% end %>
+  <% end %>
 
+
+
+  </div>
+</body>
+</html>
 
