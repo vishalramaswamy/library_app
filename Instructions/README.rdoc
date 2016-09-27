@@ -17,9 +17,9 @@ Preconfigured Admin:
 Username: admin
 Password: password1
 
-Features Implemented:
+== Features Implemented:
 
-Libaray Members -
+== Libaray Members -
 
 Users can Sign Up to become Library Members. Following are the roles of a Library Member:
 
@@ -29,7 +29,7 @@ Users can Sign Up to become Library Members. Following are the roles of a Librar
 - Book Rooms in advance upto 1 Week for a specified Start Time upto 2 Hours
 - Delete existing Reservations
 
-Admin -
+== Admin -
 
 One can Login as a Super Admin/Admin added by the Super Admin, Following are the roles of a Library Admin:
 
@@ -44,11 +44,11 @@ One can Login as a Super Admin/Admin added by the Super Admin, Following are the
 - View Reservation History by Username/Room No
 
 
-Test Cases:
+== Test Cases:
 
 Unit Test and Functionality Test for Rooms has been done. 
 
-Extra Credits Functionalities:
+== Extra Credits Functionalities:
 
 Admin can book more than one room on behalf of another member by clicking on Create Reservations on the Menu.
 
