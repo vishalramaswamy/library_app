@@ -1,6 +1,6 @@
 == README
 
-Library Study Room Booking App
+== Library Study Room Booking App
 
 Created By: Vishal Ramaswamy, Naren Thanikesh, Shyam Ramakrishnan
 
