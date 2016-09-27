@@ -42,21 +42,14 @@
               <% end %>
             </ul>
       <% end %>
-      <%= f.label :username %>
-      <%= f.text_field :username %>
-      <br>
-      <%= f.label :email %>
-      <br>
-      <%= f.email_field :email %>
-      <br>
-      <%= f.label :password %>
-      <br>
-
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
+User Name: <%= f.text_field :username %>
+      <br><br>
+Email ID: <%= f.email_field :email %>
+      <br><br>
+Password: <%= f.password_field :password %>
+      <br><br>
+Confirm Password: <%= f.password_field :password_confirmation %>
+      <br><br>
       <%= f.submit "Create my account" %>
   <% end %>
 

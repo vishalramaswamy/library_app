@@ -8,7 +8,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="main_content">
   <div id="header">
     <p>Library System</p>
     <div class="buttons">
@@ -16,11 +15,7 @@
     </div>
   </div>
   <div id="sidebar">
-    <div id="logo">
-      <%= link_to root_path do %>
-          <!--<%= image_tag "logo.jpg" %>-->
-      <% end %>
-    </div>
+
     <ul>
       <li class="category"><%= link_to "Home", :action => 'roomadmin' %></li>
       <li class="category"><%= link_to "Profile", :action => 'userprofile' %></li>
@@ -36,7 +31,6 @@
       <li class="category"><%= link_to "Create Reservations", :controller => 'access', :action => 'admincreatebooking' %></li>
     </ul>
   </div>
-</div>
 <div style="margin:5% 5%;">
   <h1>View & Book Rooms</h1>
   <h3>
