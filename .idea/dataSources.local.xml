@@ -7,8 +7,8 @@
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <introspection-scope>libapp:public,pg_catalog,</introspection-scope>
-      <resolve-scope>libapp:public,</resolve-scope>
+      <introspection-scope>libapp:pg_catalog,public</introspection-scope>
+      <resolve-scope>libapp:public</resolve-scope>
     </data-source>
   </component>
 </project>
