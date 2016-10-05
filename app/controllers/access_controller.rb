@@ -44,6 +44,8 @@ class AccessController < ApplicationController
   end
   def destroy
     @access=User.find(params[:id])
+    @username=@access.username
+    Booking.where(:name => @username).delete_all
     @access.destroy
     redirect_to :controller =>'Access' , :action => 'viewmembers'
   end
@@ -78,6 +80,19 @@ def admincreate
       redirect_to :controller => 'Access', :action => 'roomadmin'
     else 
       render 'addadmin'
+    end
+end
+
+  def addmember
+    @access = User.new
+  end
+
+  def membercreate
+    @access = User.new(user_params)
+    if  @access.save
+      redirect_to :controller => 'Access', :action => 'roomadmin'
+    else
+      render 'addmember'
     end
   end
 

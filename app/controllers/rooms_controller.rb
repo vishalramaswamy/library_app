@@ -36,6 +36,8 @@ end
 	def destroy
 @room =Roomadd.find(params[:id])
 @room.destroy
+@roomno=@room.room_no
+Booking.where(:roomnum => @roomno).delete_all
 redirect_to rooms_index_path
 	end
 	private 
