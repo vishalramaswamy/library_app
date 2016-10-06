@@ -942,3 +942,377 @@ Processing by AccessController#viewmembers as HTML
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."isAdmin" IS NULL[0m
   Rendered access/viewmembers.html.erb within layouts/application (5.0ms)
 Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-10-05 20:58:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (7.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (221.1ms)
+Completed 200 OK in 297ms (Views: 239.6ms | ActiveRecord: 30.9ms)
+
+
+Started GET "/" for ::1 at 2016-10-05 20:58:56 -0400
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 41ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for ::1 at 2016-10-05 20:59:04 -0400
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b15kxXl+hPR9NaODbTIqy3tdLLaG5I/4MRuCr7nUuecSJhsyQxrn33YMzlAALTxaKlF8dpxWXbkBpQ3/ahowNQ==", "username"=>"admin", "password"=>"[FILTERED]", "isAdmin"=>"1", "commit"=>"Login"}
+  [1m[35mUser Load (6.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["username", "admin"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users"."id" FROM "users" WHERE "users"."username" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["username", "admin"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users"."username" FROM "users" WHERE "users"."username" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["username", "admin"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users"."isAdmin" FROM "users" WHERE "users"."username" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["username", "admin"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users"."isAdmin" FROM "users" WHERE "users"."username" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["username", "admin"]]
+Redirected to http://localhost:3000/access/roomadmin
+Completed 302 Found in 98ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/access/roomadmin" for ::1 at 2016-10-05 20:59:04 -0400
+Processing by AccessController#roomadmin as HTML
+  [1m[36mUser Load (6.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered access/roomadmin.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 40ms (Views: 31.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/access/admincreatebooking" for ::1 at 2016-10-05 20:59:05 -0400
+Processing by AccessController#admincreatebooking as HTML
+  [1m[35mRoomadd Load (1.4ms)[0m  SELECT "roomadds".* FROM "roomadds"
+  Rendered access/admincreatebooking.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 52ms (Views: 43.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/Access/bookadminroomdate?room_no=103" for ::1 at 2016-10-05 20:59:07 -0400
+Processing by AccessController#bookadminroomdate as HTML
+  Parameters: {"room_no"=>"103"}
+  [1m[36mRoomadd Load (0.2ms)[0m  [1mSELECT  "roomadds"."room_no" FROM "roomadds" WHERE "roomadds"."room_no" = $1  ORDER BY "roomadds"."id" ASC LIMIT 1[0m  [["room_no", "103"]]
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered access/bookadminroomdate.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/access/bookadminroomtime" for ::1 at 2016-10-05 20:59:09 -0400
+Processing by AccessController#bookadminroomtime as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S1olhDk+meuZ8tEePlMw9RCvueFw6vE8iVNq4No59gI2IlpzA1r6wJLLvM1TTCZkQaPpIWpYI3257eWwCfd/0A==", "user_name"=>"admin2", "booking_date"=>"2016-10-05", "commit"=>"Continue"}
+Redirected to http://localhost:3000/Access/finaladminbook
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/Access/finaladminbook" for ::1 at 2016-10-05 20:59:09 -0400
+Processing by AccessController#finaladminbook as HTML
+  [1m[36mBooking Load (6.6ms)[0m  [1mSELECT "bookings"."start_time" FROM "bookings" WHERE "bookings"."booking_date" = $1  ORDER BY start_time[0m  [["booking_date", "2016-10-05"]]
+  Rendered access/finaladminbook.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 38ms (Views: 28.3ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/access/finaladmin" for ::1 at 2016-10-05 20:59:10 -0400
+Processing by AccessController#finaladmin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MAAwO2XScyCbgygccKM50K5i+Aa0NwqhqByXh3cRl+pNeE/MX7YQC5C6Rc8dvC9B/26oxq6F2OCYohjXpN8eOA==", "start_time"=>"21", "commit"=>"Book"}
+Redirected to http://localhost:3000/Access/admindone
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/Access/admindone" for ::1 at 2016-10-05 20:59:11 -0400
+Processing by AccessController#admindone as HTML
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (19.0ms)[0m  [1mINSERT INTO "bookings" ("roomnum", "name", "booking_date", "start_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["roomnum", "103"], ["name", "admin2"], ["booking_date", "2016-10-05"], ["start_time", "2000-01-01 21:00:00.000000"], ["created_at", "2016-10-05 20:59:11.037490"], ["updated_at", "2016-10-05 20:59:11.037490"]]
+  [1m[35m (72.0ms)[0m  COMMIT
+  Rendered access/admindone.html.erb within layouts/application (112.1ms)
+Completed 200 OK in 135ms (Views: 43.0ms | ActiveRecord: 91.6ms)
+
+
+Started GET "/access/viewallbooking" for ::1 at 2016-10-05 20:59:13 -0400
+Processing by AccessController#viewallbooking as HTML
+  [1m[36mBooking Load (0.3ms)[0m  [1mSELECT "bookings".* FROM "bookings"[0m
+  Rendered access/viewallbooking.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/access/viewroomfutureschedule" for ::1 at 2016-10-05 20:59:19 -0400
+Processing by AccessController#viewroomfutureschedule as HTML
+  [1m[35mRoomadd Load (0.2ms)[0m  SELECT "roomadds".* FROM "roomadds"
+  Rendered access/viewroomfutureschedule.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/access/viewroomfutureschedule" for ::1 at 2016-10-05 20:59:19 -0400
+Processing by AccessController#viewroomfutureschedule as HTML
+  [1m[36mRoomadd Load (0.3ms)[0m  [1mSELECT "roomadds".* FROM "roomadds"[0m
+  Rendered access/viewroomfutureschedule.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/access/searchroomfutureschedule" for ::1 at 2016-10-05 20:59:20 -0400
+Processing by AccessController#searchroomfutureschedule as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jBPbY0UF+XJUzyLLTV+dguCKM6JTvI1AVIkURw8ISsHxa6SUf2GaWV/2TxggQIsTsYZjYkkOXwFkN5sX3MbDEw==", "room_no"=>"103", "commit"=>"View"}
+  Rendered access/searchroomfutureschedule.html.erb within layouts/application (29.7ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (PG::UndefinedFunction: ERROR:  operator does not exist: time without time zone > integer
+LINE 1: ... $1 AND (booking_date >= '2016-10-05') AND (start_time > 20)
+                                                                  ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "bookings".* FROM "bookings" WHERE "bookings"."roomnum" = $1 AND (booking_date >= '2016-10-05') AND (start_time > 20)):
+    42:         <th>Booking Date</th>
+    43:         <th>Booking Time(hrs)</th>
+    44:       </tr>
+    45:       <% @searchresult.each do |result| %>
+    46:           <tr>
+    47:             <td><%= result.name %></td>
+    48:             <td><%= result.booking_date %></td>
+  app/views/access/searchroomfutureschedule.html.erb:45:in `_app_views_access_searchroomfutureschedule_html_erb___2823632359090174581_70096193836280'
+
+
+  Rendered /Users/Bala/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/Bala/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/Bala/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Bala/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.7ms)
+  Rendered /Users/Bala/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/Bala/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Bala/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Bala/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Bala/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.8ms)
+  Rendered /Users/Bala/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Bala/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Bala/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (102.0ms)
+  [1m[36mBooking Load (0.4ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."roomnum" IS NULL AND (booking_date >= '2016-10-05')[0m
+  [1m[35mBooking Load (0.9ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."roomnum" IS NULL AND (booking_date >= '2016-10-05') AND (start_time > 21)
+  [1m[36mBooking Load (0.6ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."roomnum" IS NULL AND (booking_date >= '2016-10-05') AND (start_time.hour > 21)[0m
+
+
+Started GET "/access/roomadmin" for ::1 at 2016-10-05 21:08:26 -0400
+Processing by AccessController#roomadmin as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered access/roomadmin.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 37ms (Views: 29.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/access/userprofile" for ::1 at 2016-10-05 21:08:28 -0400
+Processing by AccessController#userprofile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered access/userprofile.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/access/viewallbooking" for ::1 at 2016-10-05 21:08:33 -0400
+Processing by AccessController#viewallbooking as HTML
+  [1m[35mBooking Load (0.2ms)[0m  SELECT "bookings".* FROM "bookings"
+  Rendered access/viewallbooking.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/access/viewallbooking" for ::1 at 2016-10-05 21:10:52 -0400
+Processing by AccessController#viewallbooking as HTML
+  [1m[36mBooking Load (0.3ms)[0m  [1mSELECT "bookings".* FROM "bookings"[0m
+  Rendered access/viewallbooking.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 47ms (Views: 44.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/_normalize.self-0b26062fb4fc16759ec153e6726e7a9b2690a75a0ace20dcf9b39b4b919d2162.css?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/login.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/rooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/application.self-aeb03498ea2a884677e69a2903790501554737debaf94d2e4575fde86f31acb0.css?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/login.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/rooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 21:10:52 -0400
+
+
+Started GET "/access/viewroomfutureschedule" for ::1 at 2016-10-05 21:10:55 -0400
+Processing by AccessController#viewroomfutureschedule as HTML
+  [1m[35mRoomadd Load (0.2ms)[0m  SELECT "roomadds".* FROM "roomadds"
+  Rendered access/viewroomfutureschedule.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/access/searchroomfutureschedule" for ::1 at 2016-10-05 21:10:56 -0400
+Processing by AccessController#searchroomfutureschedule as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gnTKWjBEd6ENU5oXRX+pC9cuHjrfi3iRHOCM3zzLF5j/DLWtCiAUigZq98QoYL+ahiJO+sU5qtAsXgOP7wWeSg==", "room_no"=>"103", "commit"=>"View"}
+  [1m[36mBooking Load (0.3ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."roomnum" = $1 AND (booking_date >= '2016-10-05') AND (start_time > '21:00:00')[0m  [["roomnum", "103"]]
+  Rendered access/searchroomfutureschedule.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/access/admincreatebooking" for ::1 at 2016-10-05 21:11:01 -0400
+Processing by AccessController#admincreatebooking as HTML
+  [1m[35mRoomadd Load (0.3ms)[0m  SELECT "roomadds".* FROM "roomadds"
+  Rendered access/admincreatebooking.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/Access/bookadminroomdate?room_no=103" for ::1 at 2016-10-05 21:11:03 -0400
+Processing by AccessController#bookadminroomdate as HTML
+  Parameters: {"room_no"=>"103"}
+  [1m[36mRoomadd Load (0.3ms)[0m  [1mSELECT  "roomadds"."room_no" FROM "roomadds" WHERE "roomadds"."room_no" = $1  ORDER BY "roomadds"."id" ASC LIMIT 1[0m  [["room_no", "103"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered access/bookadminroomdate.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 39ms (Views: 33.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/access/bookadminroomtime" for ::1 at 2016-10-05 21:11:07 -0400
+Processing by AccessController#bookadminroomtime as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wIJvz/WcAnoPKeCWFn/3qG5tqY8lvxyM1kozXleSKHS9+hA4z/hhUQQQjUV7YOE5P2H5Tz8Nzs3m9LwOhFyhpg==", "user_name"=>"admin2", "booking_date"=>"2016-10-05", "commit"=>"Continue"}
+Redirected to http://localhost:3000/Access/finaladminbook
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/Access/finaladminbook" for ::1 at 2016-10-05 21:11:07 -0400
+Processing by AccessController#finaladminbook as HTML
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings"."start_time" FROM "bookings" WHERE "bookings"."booking_date" = $1  ORDER BY start_time[0m  [["booking_date", "2016-10-05"]]
+  Rendered access/finaladminbook.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/access/finaladmin" for ::1 at 2016-10-05 21:11:10 -0400
+Processing by AccessController#finaladmin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mf8Zdtg4tegGHUKAkSVhN7eH0HzXO24l1bdIZwxdmoLkh2aB4lzWww0kL1P8Onem5ouAvM2JvGTlCcc335MTUA==", "start_time"=>"23", "commit"=>"Book"}
+Redirected to http://localhost:3000/Access/admindone
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/Access/admindone" for ::1 at 2016-10-05 21:11:10 -0400
+Processing by AccessController#admindone as HTML
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "bookings" ("roomnum", "name", "booking_date", "start_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["roomnum", "103"], ["name", "admin2"], ["booking_date", "2016-10-05"], ["start_time", "2000-01-01 23:00:00.000000"], ["created_at", "2016-10-05 21:11:10.060425"], ["updated_at", "2016-10-05 21:11:10.060425"]]
+  [1m[35m (72.9ms)[0m  COMMIT
+  Rendered access/admindone.html.erb within layouts/application (76.1ms)
+Completed 200 OK in 98ms (Views: 24.7ms | ActiveRecord: 73.1ms)
+
+
+Started GET "/access/viewroomfutureschedule" for ::1 at 2016-10-05 21:11:15 -0400
+Processing by AccessController#viewroomfutureschedule as HTML
+  [1m[36mRoomadd Load (0.4ms)[0m  [1mSELECT "roomadds".* FROM "roomadds"[0m
+  Rendered access/viewroomfutureschedule.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 43ms (Views: 42.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/access/searchroomfutureschedule" for ::1 at 2016-10-05 21:11:16 -0400
+Processing by AccessController#searchroomfutureschedule as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZV2FIUH3xv5a+9vSploIy+zozHjuhnCmi6HvKGj3WM0YJfrWe5Ol1VHCtgHLRR5aveScuPQ0oue7H2B4uznRHw==", "room_no"=>"103", "commit"=>"View"}
+  [1m[35mBooking Load (0.3ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."roomnum" = $1 AND (booking_date >= '2016-10-05') AND (start_time > '21:00:00')  [["roomnum", "103"]]
+  Rendered access/searchroomfutureschedule.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/access/searchroomfutureschedule" for ::1 at 2016-10-05 21:12:28 -0400
+Processing by AccessController#searchroomfutureschedule as HTML
+  [1m[36mBooking Load (0.4ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."roomnum" IS NULL AND (booking_date >= '2016-10-05') AND (start_time > '21:00:00')[0m
+  Rendered access/searchroomfutureschedule.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/_normalize.self-0b26062fb4fc16759ec153e6726e7a9b2690a75a0ace20dcf9b39b4b919d2162.css?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/login.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/rooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/application.self-aeb03498ea2a884677e69a2903790501554737debaf94d2e4575fde86f31acb0.css?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/login.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/rooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-10-05 21:12:28 -0400
+
+
+Started POST "/access/searchroomfutureschedule" for ::1 at 2016-10-05 21:12:39 -0400
+Processing by AccessController#searchroomfutureschedule as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZV2FIUH3xv5a+9vSploIy+zozHjuhnCmi6HvKGj3WM0YJfrWe5Ol1VHCtgHLRR5aveScuPQ0oue7H2B4uznRHw==", "room_no"=>"103", "commit"=>"View"}
+  [1m[35mBooking Load (0.3ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."roomnum" = $1 AND (booking_date >= '2016-10-05') AND (start_time > '21:00:00')  [["roomnum", "103"]]
+  Rendered access/searchroomfutureschedule.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/access/viewallbooking" for ::1 at 2016-10-05 21:12:51 -0400
+Processing by AccessController#viewallbooking as HTML
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings"[0m
+  Rendered access/viewallbooking.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/access/viewroombookinghistory" for ::1 at 2016-10-05 21:14:27 -0400
+Processing by AccessController#viewroombookinghistory as HTML
+  [1m[35mRoomadd Load (0.3ms)[0m  SELECT "roomadds".* FROM "roomadds"
+  Rendered access/viewroombookinghistory.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 38ms (Views: 34.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/access/searchroombookinghistory" for ::1 at 2016-10-05 21:14:28 -0400
+Processing by AccessController#searchroombookinghistory as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8+00faZAaEJyRnrRe5YChZ3BmZ34wOWdOqlZHkec0X6OlUuKnCQLaXl/FwIWiRQUzM3JXeJyN9wKF9ZOlFJYrA==", "room_no"=>"103", "commit"=>"Search"}
+  [1m[36mBooking Load (0.2ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."roomnum" = $1 AND (booking_date <= '2016-10-05') AND (start_time < '21:00:00')[0m  [["roomnum", "103"]]
+  Rendered access/searchroombookinghistory.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 43ms (Views: 40.3ms | ActiveRecord: 1.0ms)

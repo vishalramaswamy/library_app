@@ -27,11 +27,11 @@ class AccessController < ApplicationController
   end
   def searchroomfutureschedule
     $globalroom_no = params[:room_no]
-    @searchresult = Booking.where(:roomnum => $globalroom_no).where("booking_date > ?" , Time.now.to_date)
+    @searchresult = Booking.where(:roomnum => $globalroom_no).where("booking_date >= ?" , Time.now.to_date).where("start_time > ?" , Time.now.hour.to_s + ":00:00")
   end
   def searchroombookinghistory
     $globalroom_no = params[:room_no]
-    @searchresult = Booking.where(:roomnum => $globalroom_no).where("booking_date < ?" , Time.now.to_date)
+    @searchresult = Booking.where(:roomnum => $globalroom_no).where("booking_date <= ?" , Time.now.to_date).where("start_time < ?" , Time.now.hour.to_s + ":00:00")
   end
   def searchuserbooking
     $globaluser_name = params[:user_name]
