@@ -43,6 +43,8 @@ One can Login as a Super Admin/Admin added by the Super Admin, Following are the
 - View/Delete existing Reservations
 - View Schedule for Rooms
 - View Reservation History by Username/Room No
+- When an admin deletes a room from a schedule, it exists in the user's schedule
+- When an admin deletes a user from a schedule, it exists in the room's schedule
 
 == Special Scenarios:
 
