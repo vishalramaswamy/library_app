@@ -44,6 +44,10 @@ One can Login as a Super Admin/Admin added by the Super Admin, Following are the
 - View Schedule for Rooms
 - View Reservation History by Username/Room No
 
+== Special Scenarios:
+
+- When an Admin deletes a Room that currently has a Reservation, the Reservation automatically gets cancelled
+- When an Admin deletes a library member who currently has a Reservation, the Reservation automatically gets cancelled
 
 == Test Cases:
 
