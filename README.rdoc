@@ -4,7 +4,7 @@
 
 Created By: Vishal Ramaswamy, Naren Thanikesh, Shyam Ramakrishnan
 
-Server URL: https://immense-beyond-37509.herokuapp.com/
+Server URL: https://nameless-coast-32776.herokuapp.com/
 
 Ruby version: 2.3
 
@@ -15,6 +15,7 @@ Database: PostgreSQL
 Preconfigured Admin:
 
 Username: admin
+
 Password: password1
 
 == Features Implemented:
@@ -23,7 +24,7 @@ Password: password1
 
 Users can Sign Up to become Library Members. Following are the roles of a Library Member:
 
-- Sign Up, Login
+- Sign Up, Login/Logout
 - Update his Profile
 - View Rooms on Room No, Building and Size
 - Book Rooms in advance upto 1 Week for a specified Start Time upto 2 Hours
@@ -33,7 +34,7 @@ Users can Sign Up to become Library Members. Following are the roles of a Librar
 
 One can Login as a Super Admin/Admin added by the Super Admin, Following are the roles of a Library Admin:
 
-- Sign Up, Login
+- Login/Logout (Admins can not Sign Up, they can be added to the system by Super Admins)
 - Update his Profile
 - Add other admins, Manage existing Admins(Update/Delete)
 - Manage existing Members
