@@ -4,7 +4,7 @@
 
 Created By: Vishal Ramaswamy, Naren Thanikesh, Shyam Ramakrishnan
 
-Server URL: https://immense-beyond-37509.herokuapp.com/
+Server URL: https://nameless-coast-32776.herokuapp.com/
 
 Ruby version: 2.3
 
